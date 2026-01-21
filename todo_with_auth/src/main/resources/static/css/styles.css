@@ -1,9 +1,19 @@
-body {
+html {
+	font: 100%;
+	font-family: helvetica, colibri, tahoma, sans-serif;
+	color: #333;
+	background-image: url("../images/brillant.png");
+	background-position: initial initial;
+	background-repeat: initial initial;
+	text-shadow: 0.1em 0.1em 0.1em #eee;
+}
+
+/* body {
     font-family: sans-serif;
     padding: 20px;
     max-width: 600px;
     margin: auto;
-}
+} */
 
 div.todo {
 	width: 40em;
@@ -19,65 +29,6 @@ div.todo h2 {
 	color: #c00;
 }
 
-#usuario,
-.usuario-edit {
-	font-size: 1.2em;
-}
-
-#usuario {
-	width: 33em;
-}
-
-.usuario-edit {
-	width: 31em;
-}
-
-#usuario-list {
-	width: 40em;
-	margin-top: 1em;
-}
-
-.usuario-item {
-	padding: 1em;
-	vertical-align: middle;
-}
-
-.usuario-item:hover {
-	background-color: #eee;
-}
-
-.usuario-id {
-	visibility: hidden;
-	height: 0;
-}
-
-.usuario-text {
-	display: block;
-	float: left;
-}
-
-.clear {
-	clear: both;
-}
-
-.usuario-delete {
-	width: 16px;
-	height: 16px;
-
-	background-image: url("../images/delete.gif");
-	background-repeat: no-repeat;
-
-	display: block;
-	float: right;
-
-	visibility: hidden;
-}
-
-.usuario-item:hover .usuario-delete {
-	visibility: visible;
-}
-
-
 .box {
     border: 1px solid #ccc;
     padding: 20px;
@@ -87,11 +38,10 @@ div.todo h2 {
 
 #area-logada {
     display: none;
-    background-color: #e8f5e9;
 }
 
 #area-login {
-    background-color: #fce4ec;
+    background-color: #cccccc;
 }
 
 label {
@@ -111,15 +61,65 @@ button {
 }
 
 #btn-logout {
-    background-color: #ff5252;
+    /* background-color: #ff5252;
     color: white;
-    border: none;
+    border: none; */
 }
 
-#console {
-    background: #333;
-    color: #0f0;
-    padding: 10px;
-    min-height: 100px;
-    font-family: monospace;
+#tarefa,
+.tarefa-edit {
+	font-size: 1.2em;
+}
+
+#tarefa {
+	width: 33em;
+}
+
+.tarefa-edit {
+	width: 31em;
+}
+
+#tarefa-list {
+	width: 40em;
+	margin-top: 1em;
+}
+
+.tarefa-item {
+	padding: 1em;
+	vertical-align: middle;
+}
+
+.tarefa-item:hover {
+	background-color: #eee;
+}
+
+.tarefa-id {
+	visibility: hidden;
+	height: 0;
+}
+
+.tarefa-text {
+	display: block;
+	float: left;
+}
+
+.clear {
+	clear: both;
+}
+
+.tarefa-delete {
+	width: 16px;
+	height: 16px;
+
+	background-image: url("../images/delete.gif");
+	background-repeat: no-repeat;
+
+	display: block;
+	float: right;
+
+	visibility: hidden;
+}
+
+.tarefa-item:hover .tarefa-delete {
+	visibility: visible;
 }

@@ -36,7 +36,7 @@ public class TarefaService {
         // Precisamos do objeto usuário para a busca
         Usuario usuario = usuarioRepository.findById(usuarioId)
                 .orElseThrow(() -> new RegraNegocioException("Usuário não encontrado"));
-        
+        System.out.println("Listando tarefas para o usuário: " + usuario.getUsername());
         return tarefaRepository.findByUsuario(usuario);
     }
     

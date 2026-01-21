@@ -35,6 +35,9 @@ public class TarefaController {
 
         // 1. Busca as entidades no banco
         List<Tarefa> tarefas = tarefaService.listarPorUsuario(usuarioLogado.getId());
+        for (Tarefa t : tarefas) {
+            System.out.println("Tarefa encontrada: " + t.getTexto());
+        }   
 
         // 2. Converte para DTO usando Stream
         List<TarefaResponseDTO> resposta = tarefas.stream()

@@ -11,32 +11,30 @@
 </head>
 
 <body>
+    <div class="todo">
+        <h2>TODO List</h2>
 
-    <h1>Sistema Seguro</h1>
+        <div id="area-login" class="box">
+            <h3>🔐 Login</h3>
+            <form id="formLogin">
+                <label>Usuário:</label>
+                <input type="text" name="username" id="username" placeholder="admin">
 
-    <div id="area-login" class="box">
-        <h3>🔐 Login</h3>
-        <form id="formLogin">
-            <label>Usuário:</label>
-            <input type="text" name="username" id="username" placeholder="admin">
+                <label>Senha:</label>
+                <input type="password" name="password" id="password" placeholder="123456">
 
-            <label>Senha:</label>
-            <input type="password" name="password" id="password" placeholder="123456">
+                <button type="submit">Entrar</button>
+            </form>
+        </div>
 
-            <button type="submit">Entrar</button>
-        </form>
+        <div id="area-logada">
+            <input type="text" id="tarefa">
+            <div id="tarefa-list">
+            </div>
+            <hr>
+            <button id="btn-logout">Sair (Logout)</button>
+        </div>
     </div>
-
-    <div id="area-logada" class="box">
-        <h3>👋 Bem-vindo!</h3>
-        <p>Sessão ativa. Você pode realizar operações.</p>
-
-        <a href="tarefas.html">Todo List</a>
-        <hr>
-        <button id="btn-logout">Sair (Logout)</button>
-    </div>
-
-    <div id="console">Log de sistema...</div>
 </body>
 
 </html>
