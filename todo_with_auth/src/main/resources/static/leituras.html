@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="pt-BR" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Livraria Conceito - Leituras</title>
+  <!-- Bulma CSS Framework -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.1/css/bulma.min.css">
+  <!-- Google Fonts: Inter & Playfair Display -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+  <!-- FontAwesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <!-- Custom Styles -->
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    /* Estilos específicos para a página de Leituras */
+    .todo-section {
+      background-color: var(--bulma-card-background-color);
+      border-radius: 12px;
+      box-shadow: var(--bulma-card-shadow);
+      padding: 1.5rem;
+      height: 100%;
+    }
+    
+    .todo-input-card {
+      background-color: var(--bulma-card-background-color);
+      border-radius: 12px;
+      box-shadow: var(--bulma-card-shadow);
+      padding: 1.5rem;
+      margin-bottom: 2rem;
+    }
+    
+    .todo-item {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1rem;
+      background-color: var(--bulma-scheme-main);
+      border-radius: 8px;
+      border: 1px solid rgba(0, 0, 0, 0.05);
+      margin-bottom: 0.75rem;
+      transition: var(--transition-smooth);
+    }
+    
+    html[data-theme="dark"] .todo-item {
+      border-color: rgba(255, 255, 255, 0.05);
+    }
+    
+    .todo-item:hover {
+      transform: translateX(4px);
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    }
+    
+    .todo-item.completed {
+      opacity: 0.65;
+    }
+    
+    .todo-item.completed .todo-title {
+      text-decoration: line-through;
+    }
+    
+    .todo-info {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      flex-grow: 1;
+    }
+    
+    .todo-icon-box {
+      font-size: 1.25rem;
+      color: var(--color-accent-gold);
+    }
+    
+    .todo-title {
+      font-weight: 600;
+      color: var(--bulma-text);
+      font-size: 1.05rem;
+    }
+    
+    .todo-author {
+      font-size: 0.85rem;
+      color: var(--color-text-muted);
+      margin-top: 0.15rem;
+    }
+    
+    .todo-actions {
+      display: flex;
+      gap: 0.5rem;
+    }
+    
+    .action-btn {
+      background: transparent !important;
+      border: none !important;
+      cursor: pointer;
+      width: 32px;
+      height: 32px;
+      border-radius: 50% !important;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: var(--transition-smooth);
+    }
+    
+    .action-btn.btn-done {
+      color: #10b981;
+    }
+    
+    .action-btn.btn-done:hover {
+      background-color: rgba(16, 185, 129, 0.1) !important;
+    }
+    
+    .action-btn.btn-undo {
+      color: #3b82f6;
+    }
+    
+    .action-btn.btn-undo:hover {
+      background-color: rgba(59, 130, 246, 0.1) !important;
+    }
+    
+    .action-btn.btn-delete {
+      color: #ef4444;
+    }
+    
+    .action-btn.btn-delete:hover {
+      background-color: rgba(239, 68, 68, 0.1) !important;
+    }
+    
+    .todo-btn-add {
+      background-color: var(--color-primary-brown) !important;
+      color: white !important;
+      border: none;
+      font-weight: 600;
+      transition: var(--transition-smooth);
+    }
+    
+    .todo-btn-add:hover {
+      background-color: var(--color-primary-brown-dark) !important;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Hero Section -->
+  <section class="hero is-relative custom-hero" style="height: 250px;">
+    <!-- Hero Header (Navbar) -->
+    <div class="hero-head">
+      <nav class="navbar is-transparent" role="navigation" aria-label="main navigation" id="main-navbar">
+        <div class="container">
+          <div class="navbar-brand">
+            <a class="navbar-item logo-brand is-flex is-align-items-center" href="catalogo.html" style="gap: 0.75rem; padding: 0.5rem 0.75rem;">
+              <img src="assets/logo.png" alt="Relíquia Escrita" style="max-height: 40px; filter: brightness(0) invert(1) drop-shadow(0 2px 4px rgba(0,0,0,0.15));">
+              <span class="logo-text" style="font-size: 1.40rem; margin: 0; line-height: 1;">Relíquia Escrita</span>
+            </a>
+            <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarMenu">
+              <span aria-hidden="true"></span>
+              <span aria-hidden="true"></span>
+              <span aria-hidden="true"></span>
+              <span aria-hidden="true"></span>
+            </a>
+          </div>
+
+          <div id="navbarMenu" class="navbar-menu">
+            <div class="navbar-end">
+              <a class="navbar-item custom-nav-item" href="catalogo.html">Catálogo</a>
+              <a class="navbar-item custom-nav-item" href="compras.html">
+                Compras
+                <span class="tag is-rounded is-danger cart-badge ml-2" id="cart-badge" style="display: none;">0</span>
+              </a>
+              <a class="navbar-item custom-nav-item is-active" href="leituras.html">Leituras</a>
+              <a class="navbar-item custom-nav-item" href="configuracoes.html">Configurações</a>
+              <a class="navbar-item custom-nav-item" id="nav-logout-btn" href="#">Sair</a>
+              <a class="navbar-item theme-toggle" id="theme-toggle-btn" aria-label="Alternar tema">
+                <i class="fa-regular fa-moon toggle-icon"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </div>
+  </section>
+
+  <!-- Main Content Area -->
+  <main class="main-content py-6">
+    <div class="container px-4" style="max-width: 1340px; width: 100%;">
+      <h1 class="title font-serif section-title mb-5">Minha Fila de Leituras</h1>
+      
+      <!-- Bloco de entrada (Cadastrar nova leitura) -->
+      <div class="todo-input-card">
+        <h2 class="title is-5 font-serif mb-4"><i class="fa-solid fa-plus-circle mr-2" style="color: var(--color-accent-gold);"></i>Adicionar Novo Livro para Ler</h2>
+        <form id="add-reading-form" onsubmit="event.preventDefault();">
+          <div class="columns is-multiline">
+            <!-- Coluna 1: Seleção -->
+            <div class="column is-7">
+              <div class="field">
+                <label class="label text-theme-override">Escolha o Livro no Catálogo</label>
+                <div class="control">
+                  <div class="select is-fullwidth">
+                    <select id="select-todo-book" required>
+                      <option value="" disabled selected>Selecione um livro...</option>
+                      <!-- Populado via JS -->
+                    </select>
+                  </div>
+                </div>
+              </div>
+              <div class="field mt-5">
+                <button class="button todo-btn-add width-100-percent" id="btn-add-todo" disabled>
+                  <span>Adicionar à Fila</span>
+                  <i class="fa-solid fa-plus ml-2"></i>
+                </button>
+              </div>
+            </div>
+            
+            <!-- Coluna 2: Prévia -->
+            <div class="column is-5">
+              <div id="book-preview-container" class="box is-flex" style="display: none !important; gap: 1.5rem; align-items: flex-start; padding: 1.5rem; background-color: var(--color-cream-card); border: 1px dashed var(--color-accent-gold); height: 100%;">
+                <div style="width: 100px; min-width: 100px; height: 150px; aspect-ratio: 2/3; overflow: hidden; border-radius: 6px; box-shadow: 0 4px 10px rgba(0,0,0,0.15);">
+                  <img id="preview-cover" src="" alt="Capa" style="width: 100%; height: 100%; object-fit: cover;">
+                </div>
+                <div style="flex-grow: 1;">
+                  <h4 id="preview-title" class="title is-5 font-serif mb-2 text-theme-override" style="font-weight: 700; line-height: 1.2;"></h4>
+                  <p id="preview-author" class="subtitle is-6 mb-3" style="color: var(--color-accent-gold); font-weight: 600;"></p>
+                  <p id="preview-desc" class="is-size-7 text-muted" style="display: -webkit-box; -webkit-line-clamp: 5; -webkit-box-orient: vertical; overflow: hidden; line-height: 1.5;"></p>
+                </div>
+              </div>
+              <div id="book-preview-placeholder" class="box is-flex is-align-items-center is-justify-content-center" style="height: 100%; min-height: 120px; border: 1px dashed rgba(197, 168, 128, 0.4); background-color: transparent;">
+                <p class="text-muted is-size-7 text-center">Selecione um livro para ver os detalhes da obra</p>
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
+
+      <!-- Listas de Leituras (Pendentes e Concluídas) -->
+      <div class="columns">
+        <!-- Coluna: Para Ler (Pendentes) -->
+        <div class="column is-6">
+          <div class="todo-section">
+            <h3 class="title is-5 font-serif mb-4">
+              <i class="fa-regular fa-bookmark mr-2" style="color: var(--color-accent-gold);"></i>
+              Para Ler (<span id="count-pending">0</span>)
+            </h3>
+            
+            <div id="pending-list">
+              <!-- As tarefas pendentes serão carregadas dinamicamente via AJAX -->
+            </div>
+          </div>
+        </div>
+
+        <!-- Coluna: Lidos (Concluídos) -->
+        <div class="column is-6">
+          <div class="todo-section">
+            <h3 class="title is-5 font-serif mb-4">
+              <i class="fa-solid fa-circle-check mr-2" style="color: #10b981;"></i>
+              Lidos (<span id="count-completed">0</span>)
+            </h3>
+            
+            <div id="completed-list">
+              <!-- As tarefas concluídas serão carregadas dinamicamente via AJAX -->
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="custom-footer py-6">
+    <div class="container px-4">
+      <div class="columns is-mobile is-multiline">
+        <!-- Coluna 1: Informações e Endereço -->
+        <div class="column is-12-mobile is-6-tablet">
+          <h2 class="title is-5 footer-heading font-serif">Relíquia Escrita</h2>
+          <p class="mb-3" style="color: #d1c7bd; font-size: 0.95rem;">
+            O seu ponto de encontro com a literatura e as boas histórias. Venha nos visitar ou compre online com toda a comodidade.
+          </p>
+          <div class="contact-item">
+            <span class="contact-icon"><i class="fa-solid fa-map-marker-alt"></i></span>
+            <span class="contact-link" style="text-decoration: none; cursor: default;">Rua dos Antiquários, 789 - Centro Histórico, Curitiba - PR</span>
+          </div>
+          <div class="contact-item">
+            <span class="contact-icon"><i class="fa-regular fa-clock"></i></span>
+            <span class="contact-link" style="text-decoration: none; cursor: default;">Seg. a Sex.: 09h30 às 18h30 | Sáb.: 09h00 às 14h00</span>
+          </div>
+        </div>
+        <!-- Coluna 2: Redes Sociais e Contato -->
+        <div class="column is-12-mobile is-6-tablet">
+          <h2 class="title is-5 footer-heading font-serif">Contatos & Redes</h2>
+          <div class="contact-item">
+            <span class="contact-icon"><i class="fa-regular fa-envelope"></i></span>
+            <a href="mailto:contato@reliquiaescrita.com.br" class="contact-link">contato@reliquiaescrita.com.br</a>
+          </div>
+          <div class="contact-item">
+            <span class="contact-icon"><i class="fa-brands fa-whatsapp"></i></span>
+            <a href="https://wa.me/5541987654321" target="_blank" class="contact-link">+55 (41) 98765-4321</a>
+          </div>
+          <div class="contact-item">
+            <span class="contact-icon"><i class="fa-brands fa-instagram"></i></span>
+            <a href="https://instagram.com/reliquiaescrita" target="_blank" class="contact-link">@reliquiaescrita</a>
+          </div>
+          <div class="contact-item">
+            <span class="contact-icon"><i class="fa-brands fa-facebook-f"></i></span>
+            <a href="https://facebook.com/reliquiaescrita" target="_blank" class="contact-link">/reliquiaescrita</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- LGPD Cookie Banner -->
+  <div id="cookie-banner" class="cookie-banner" style="display: none;">
+    <div class="container px-4 is-flex is-justify-content-space-between is-align-items-center cookie-banner-content">
+      <p class="mb-0 cookie-text">
+        Utilizamos cookies e armazenamento local para personalizar sua experiência (como tema e fontes). Ao continuar navegando, você concorda com nossas políticas.
+      </p>
+      <button class="button is-small cookie-btn" id="accept-cookies">Entendi</button>
+    </div>
+  </div>
+
+  <!-- Javascript -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="script.js"></script>
+  <script src="leituras.js?v=2"></script>
+</body>
+</html>

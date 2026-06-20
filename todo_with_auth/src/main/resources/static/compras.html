@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="pt-BR" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Livraria Conceito - Compras</title>
+  <!-- Bulma CSS Framework -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.1/css/bulma.min.css">
+  <!-- Google Fonts: Inter & Playfair Display -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+  <!-- FontAwesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <!-- Custom Styles -->
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- Hero Section -->
+  <section class="hero is-relative custom-hero" style="height: 250px;">
+    <!-- Hero Header (Navbar) -->
+    <div class="hero-head">
+      <nav class="navbar is-transparent" role="navigation" aria-label="main navigation" id="main-navbar">
+        <div class="container">
+          <div class="navbar-brand">
+            <a class="navbar-item logo-brand is-flex is-align-items-center" href="catalogo.html" style="gap: 0.75rem; padding: 0.5rem 0.75rem;">
+              <img src="assets/logo.png" alt="Relíquia Escrita" style="max-height: 40px; filter: brightness(0) invert(1) drop-shadow(0 2px 4px rgba(0,0,0,0.15));">
+              <span class="logo-text" style="font-size: 1.40rem; margin: 0; line-height: 1;">Relíquia Escrita</span>
+            </a>
+            <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarMenu">
+              <span aria-hidden="true"></span>
+              <span aria-hidden="true"></span>
+              <span aria-hidden="true"></span>
+              <span aria-hidden="true"></span>
+            </a>
+          </div>
+
+          <div id="navbarMenu" class="navbar-menu">
+            <div class="navbar-end">
+              <a class="navbar-item custom-nav-item" href="catalogo.html">Catálogo</a>
+              <a class="navbar-item custom-nav-item is-active" href="compras.html">
+                Compras
+                <span class="tag is-rounded is-danger cart-badge ml-2" id="cart-badge" style="display: none;">0</span>
+              </a>
+              <a class="navbar-item custom-nav-item" href="leituras.html">Leituras</a>
+              <a class="navbar-item custom-nav-item" href="configuracoes.html">Configurações</a>
+              <a class="navbar-item custom-nav-item" id="nav-logout-btn" href="#">Sair</a>
+              <a class="navbar-item theme-toggle" id="theme-toggle-btn" aria-label="Alternar tema">
+                <i class="fa-regular fa-moon toggle-icon"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </div>
+  </section>
+
+  <!-- Main Content Area -->
+  <main class="main-content py-6">
+    <div class="container px-4" id="cart-page-container" style="max-width: 1340px; width: 100%;">
+      <div id="cart-loading" class="has-text-centered py-6">
+        <i class="fa-solid fa-circle-notch fa-spin fa-3x mb-3" style="color: var(--color-accent-gold);"></i>
+        <p class="subtitle is-6">Carregando seu carrinho...</p>
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="custom-footer py-6">
+    <div class="container px-4">
+      <div class="columns is-mobile is-multiline">
+        <!-- Coluna 1: Informações e Endereço -->
+        <div class="column is-12-mobile is-6-tablet">
+          <h2 class="title is-5 footer-heading font-serif">Relíquia Escrita</h2>
+          <p class="mb-3" style="color: #d1c7bd; font-size: 0.95rem;">
+            O seu ponto de encontro com a literatura e as boas histórias. Venha nos visitar ou compre online com toda a comodidade.
+          </p>
+          <div class="contact-item">
+            <span class="contact-icon"><i class="fa-solid fa-map-marker-alt"></i></span>
+            <span class="contact-link" style="text-decoration: none; cursor: default;">Rua dos Antiquários, 789 - Centro Histórico, Curitiba - PR</span>
+          </div>
+          <div class="contact-item">
+            <span class="contact-icon"><i class="fa-regular fa-clock"></i></span>
+            <span class="contact-link" style="text-decoration: none; cursor: default;">Seg. a Sex.: 09h30 às 18h30 | Sáb.: 09h00 às 14h00</span>
+          </div>
+        </div>
+        <!-- Coluna 2: Redes Sociais e Contato -->
+        <div class="column is-12-mobile is-6-tablet">
+          <h2 class="title is-5 footer-heading font-serif">Contatos & Redes</h2>
+          <div class="contact-item">
+            <span class="contact-icon"><i class="fa-regular fa-envelope"></i></span>
+            <a href="mailto:contato@reliquiaescrita.com.br" class="contact-link">contato@reliquiaescrita.com.br</a>
+          </div>
+          <div class="contact-item">
+            <span class="contact-icon"><i class="fa-brands fa-whatsapp"></i></span>
+            <a href="https://wa.me/5541987654321" target="_blank" class="contact-link">+55 (41) 98765-4321</a>
+          </div>
+          <div class="contact-item">
+            <span class="contact-icon"><i class="fa-brands fa-instagram"></i></span>
+            <a href="https://instagram.com/reliquiaescrita" target="_blank" class="contact-link">@reliquiaescrita</a>
+          </div>
+          <div class="contact-item">
+            <span class="contact-icon"><i class="fa-brands fa-facebook-f"></i></span>
+            <a href="https://facebook.com/reliquiaescrita" target="_blank" class="contact-link">/reliquiaescrita</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- LGPD Cookie Banner -->
+  <div id="cookie-banner" class="cookie-banner" style="display: none;">
+    <div class="container px-4 is-flex is-justify-content-space-between is-align-items-center cookie-banner-content">
+      <p class="mb-0 cookie-text">
+        Utilizamos cookies e armazenamento local para personalizar sua experiência (como tema e fontes). Ao continuar navegando, você concorda com nossas políticas.
+      </p>
+      <button class="button is-small cookie-btn" id="accept-cookies">Entendi</button>
+    </div>
+  </div>
+
+
+
+  <!-- Javascript -->
+  <script src="script.js"></script>
+  <script src="compras.js"></script>
+</body>
+</html>

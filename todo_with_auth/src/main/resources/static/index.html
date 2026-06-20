@@ -1,40 +1,455 @@
 <!DOCTYPE html>
-<html lang="pt-br">
-
+<html lang="pt-BR" data-theme="light">
 <head>
-    <meta charset="UTF-8">
-    <title>Sistema REST Seguro</title>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <script src="js/scripts.js"></script>
-    <link rel="stylesheet" href="css/styles.css">
-    <link rel="icon" href="favico.ico">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Relíquia Escrita - Login</title>
+  <!-- Bulma CSS Framework -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.1/css/bulma.min.css">
+  <!-- Google Fonts: Inter & Playfair Display -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+  <!-- FontAwesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <!-- Custom Styles -->
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    body {
+      background: linear-gradient(to bottom, rgba(45, 38, 33, 0.65) 0%, rgba(45, 38, 33, 0.5) 60%, rgba(45, 38, 33, 0.8) 100%), 
+                  url('assets/background.png'), 
+                  linear-gradient(135deg, #8c7662, #47382b);
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      padding: 1.5rem;
+    }
+
+    .auth-container {
+      width: 100%;
+      max-width: 480px;
+      z-index: 10;
+    }
+
+    .auth-card {
+      background: rgba(255, 255, 255, 0.08);
+      backdrop-filter: blur(20px) saturate(140%);
+      -webkit-backdrop-filter: blur(20px) saturate(140%);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      border-radius: 24px;
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3),
+                  inset 0 1px 0 rgba(255, 255, 255, 0.2);
+      padding: 2.5rem 2rem;
+      transition: var(--transition-smooth);
+    }
+
+    html[data-theme="dark"] .auth-card {
+      background: rgba(20, 16, 14, 0.6);
+      border-color: rgba(255, 255, 255, 0.08);
+    }
+
+    .auth-title {
+      color: #ffffff !important;
+      font-family: var(--font-serif);
+      font-weight: 700;
+      text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+      text-align: center;
+    }
+
+    .auth-tabs {
+      border-bottom: 1px solid rgba(255, 255, 255, 0.15) !important;
+      margin-bottom: 2rem;
+    }
+
+    .auth-tabs a {
+      color: rgba(255, 255, 255, 0.6) !important;
+      font-weight: 500;
+      border-bottom-color: transparent !important;
+      transition: var(--transition-smooth);
+      font-size: 1.1rem;
+    }
+
+    .auth-tabs li.is-active a {
+      color: var(--color-accent-gold) !important;
+      border-bottom-color: var(--color-accent-gold) !important;
+      border-bottom-width: 2px !important;
+      font-weight: 700;
+    }
+
+    .auth-tabs a:hover {
+      color: #ffffff !important;
+      background: transparent !important;
+    }
+
+    .auth-field .label {
+      color: rgba(255, 255, 255, 0.85) !important;
+      font-weight: 500;
+      font-size: 0.9rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .auth-input {
+      background: rgba(255, 255, 255, 0.08) !important;
+      border: 1px solid rgba(255, 255, 255, 0.15) !important;
+      color: #ffffff !important;
+      border-radius: 12px !important;
+      height: 48px;
+      transition: var(--transition-smooth);
+    }
+
+    .auth-input::placeholder {
+      color: rgba(255, 255, 255, 0.4) !important;
+    }
+
+    .auth-input:focus {
+      border-color: var(--color-accent-gold) !important;
+      box-shadow: 0 0 0 0.125em rgba(197, 168, 128, 0.25) !important;
+      background: rgba(255, 255, 255, 0.12) !important;
+    }
+
+    .auth-icon {
+      color: rgba(255, 255, 255, 0.5) !important;
+      height: 48px !important;
+      display: flex;
+      align-items: center;
+    }
+
+    .auth-input:focus ~ .icon {
+      color: var(--color-accent-gold) !important;
+    }
+
+    .auth-btn {
+      background-color: var(--color-accent-gold) !important;
+      color: #2d2621 !important;
+      border: none !important;
+      font-weight: 700 !important;
+      border-radius: 12px !important;
+      height: 48px;
+      transition: var(--transition-smooth);
+      width: 100%;
+    }
+
+    .auth-btn:hover {
+      background-color: #d8be99 !important;
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(197, 168, 128, 0.3);
+    }
+
+    .auth-btn:active {
+      transform: scale(0.98) !important;
+    }
+
+    .auth-footer-text {
+      text-align: center;
+      color: rgba(255, 255, 255, 0.6);
+      font-size: 0.85rem;
+      margin-top: 1.5rem;
+    }
+
+    .auth-alert {
+      border-radius: 12px;
+      padding: 0.75rem 1rem;
+      margin-bottom: 1.5rem;
+      font-size: 0.9rem;
+      display: none;
+      align-items: center;
+      gap: 0.5rem;
+      animation: fadeIn 0.3s ease;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(-5px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .auth-alert.is-danger {
+      background-color: rgba(239, 68, 68, 0.15);
+      border: 1px solid rgba(239, 68, 68, 0.3);
+      color: #fca5a5;
+    }
+
+    .auth-alert.is-success {
+      background-color: rgba(16, 185, 129, 0.15);
+      border: 1px solid rgba(16, 185, 129, 0.3);
+      color: #86efac;
+    }
+
+    /* Decorative elements */
+    .brand-logo-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-bottom: 2rem;
+    }
+    
+    .brand-logo {
+      max-height: 70px;
+      filter: brightness(0) invert(1) drop-shadow(0 4px 10px rgba(0,0,0,0.3));
+      margin-bottom: 0.5rem;
+    }
+
+    .brand-text {
+      font-family: var(--font-serif);
+      font-style: italic;
+      font-weight: 700;
+      font-size: 2rem;
+      color: #ffffff;
+      text-shadow: 0 4px 8px rgba(0,0,0,0.4);
+    }
+    
+    .brand-tagline {
+      font-size: 0.9rem;
+      color: rgba(255, 255, 255, 0.7);
+      margin-top: 0.25rem;
+    }
+  </style>
 </head>
-
 <body>
-    <div class="todo">
-        <h2>TODO List</h2>
 
-        <div id="area-login" class="box">
-            <h3>🔐 Login</h3>
-            <form id="formLogin">
-                <label>Usuário:</label>
-                <input type="text" name="username" id="username" placeholder="admin">
-
-                <label>Senha:</label>
-                <input type="password" name="password" id="password" placeholder="123456">
-
-                <button type="submit">Entrar</button>
-            </form>
-        </div>
-
-        <div id="area-logada">
-            <input type="text" id="tarefa">
-            <div id="tarefa-list">
-            </div>
-            <hr>
-            <button id="btn-logout">Sair (Logout)</button>
-        </div>
+  <div class="auth-container">
+    
+    <div class="brand-logo-container">
+      <img src="assets/logo.png" alt="Relíquia Escrita" class="brand-logo">
+      <span class="brand-text">Relíquia Escrita</span>
+      <span class="brand-tagline">Seu ponto de encontro com as boas histórias</span>
     </div>
-</body>
 
+    <div class="auth-card">
+      <!-- Alerts -->
+      <div id="auth-alert" class="auth-alert">
+        <i class="fa-solid fa-circle-exclamation alert-icon"></i>
+        <span id="auth-alert-message"></span>
+      </div>
+
+      <!-- Tabs -->
+      <div class="tabs is-fullwidth auth-tabs">
+        <ul>
+          <li class="is-active" id="tab-login">
+            <a onclick="switchTab('login')">Entrar</a>
+          </li>
+          <li id="tab-register">
+            <a onclick="switchTab('register')">Cadastrar</a>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Login Form -->
+      <form id="login-form">
+        <div class="field auth-field mb-4">
+          <label class="label">Usuário</label>
+          <div class="control has-icons-left">
+            <input class="input auth-input" type="text" id="login-username" placeholder="Digite seu usuário" required autocomplete="username">
+            <span class="icon is-small is-left auth-icon">
+              <i class="fa-regular fa-user"></i>
+            </span>
+          </div>
+        </div>
+
+        <div class="field auth-field mb-5">
+          <label class="label">Senha</label>
+          <div class="control has-icons-left">
+            <input class="input auth-input" type="password" id="login-password" placeholder="Digite sua senha" required autocomplete="current-password">
+            <span class="icon is-small is-left auth-icon">
+              <i class="fa-solid fa-lock"></i>
+            </span>
+          </div>
+        </div>
+
+        <button class="button auth-btn" type="submit" id="login-btn">
+          <span>Acessar Livraria</span>
+        </button>
+      </form>
+
+      <!-- Register Form (Hidden by default) -->
+      <form id="register-form" style="display: none;">
+        <div class="field auth-field mb-4">
+          <label class="label">Escolha um Usuário</label>
+          <div class="control has-icons-left">
+            <input class="input auth-input" type="text" id="register-username" placeholder="Ex: leitor_avido" required autocomplete="username">
+            <span class="icon is-small is-left auth-icon">
+              <i class="fa-regular fa-user"></i>
+            </span>
+          </div>
+        </div>
+
+        <div class="field auth-field mb-4">
+          <label class="label">Crie uma Senha</label>
+          <div class="control has-icons-left">
+            <input class="input auth-input" type="password" id="register-password" placeholder="Mínimo 6 caracteres" required autocomplete="new-password">
+            <span class="icon is-small is-left auth-icon">
+              <i class="fa-solid fa-lock"></i>
+            </span>
+          </div>
+        </div>
+
+        <div class="field auth-field mb-5">
+          <label class="label">Confirme sua Senha</label>
+          <div class="control has-icons-left">
+            <input class="input auth-input" type="password" id="register-confirm" placeholder="Repita a senha criada" required autocomplete="new-password">
+            <span class="icon is-small is-left auth-icon">
+              <i class="fa-solid fa-lock"></i>
+            </span>
+          </div>
+        </div>
+
+        <button class="button auth-btn" type="submit" id="register-btn">
+          <span>Criar Minha Conta</span>
+        </button>
+      </form>
+
+      <div class="auth-footer-text">
+        <p>Acesso seguro garantido por criptografia.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script>
+    // Tab Toggling
+    function switchTab(tab) {
+      $('#auth-alert').hide();
+      if (tab === 'login') {
+        $('#tab-login').addClass('is-active');
+        $('#tab-register').removeClass('is-active');
+        $('#login-form').show();
+        $('#register-form').hide();
+      } else {
+        $('#tab-register').addClass('is-active');
+        $('#tab-login').removeClass('is-active');
+        $('#register-form').show();
+        $('#login-form').hide();
+      }
+    }
+
+    // CSRF Token Setup
+    function getCookie(name) {
+      if (!document.cookie) return null;
+      const xsrfCookies = document.cookie.split(';')
+        .map(c => c.trim())
+        .filter(c => c.startsWith(name + '='));
+      if (xsrfCookies.length === 0) return null;
+      return decodeURIComponent(xsrfCookies[0].substring(name.length + 1));
+    }
+
+    $.ajaxSetup({
+      beforeSend: function (xhr, settings) {
+        if (!/^(GET|HEAD|OPTIONS|TRACE)$/i.test(settings.type) && !this.crossDomain) {
+          const csrftoken = getCookie('XSRF-TOKEN');
+          if (csrftoken) {
+            xhr.setRequestHeader("X-XSRF-TOKEN", csrftoken);
+          }
+        }
+      }
+    });
+
+    // Alert helper
+    function showAlert(message, type = 'danger') {
+      const alert = $('#auth-alert');
+      const icon = alert.find('.alert-icon');
+      
+      alert.removeClass('is-danger is-success').addClass('is-' + type);
+      
+      if (type === 'success') {
+        icon.removeClass('fa-circle-exclamation').addClass('fa-circle-check');
+      } else {
+        icon.removeClass('fa-circle-check').addClass('fa-circle-exclamation');
+      }
+      
+      $('#auth-alert-message').text(message);
+      alert.css('display', 'flex');
+    }
+
+    // Submit Forms
+    $(function() {
+      // Clear local storage cart on fresh entry (optional, but keep theme settings)
+      // Ensure we hit the root path to grab CSRF token cookie on boot
+      $.get('/api/tarefas').always(function() {
+        console.log("Cookie CSRF sincronizado.");
+      });
+
+      // Login handler
+      $('#login-form').submit(function(e) {
+        e.preventDefault();
+        $('#login-btn').addClass('is-loading');
+        $('#auth-alert').hide();
+
+        const credentials = {
+          username: $('#login-username').val().trim(),
+          password: $('#login-password').val()
+        };
+
+        $.ajax({
+          url: '/perform_login',
+          type: 'POST',
+          data: credentials,
+          success: function() {
+            window.location.href = 'catalogo.html';
+          },
+          error: function(xhr) {
+            $('#login-btn').removeClass('is-loading');
+            showAlert('Usuário ou senha incorretos. Tente novamente.');
+          }
+        });
+      });
+
+      // Register handler
+      $('#register-form').submit(function(e) {
+        e.preventDefault();
+        
+        const username = $('#register-username').val().trim();
+        const password = $('#register-password').val();
+        const confirm = $('#register-confirm').val();
+
+        if (password.length < 6) {
+          showAlert('A senha deve conter no mínimo 6 caracteres.');
+          return;
+        }
+
+        if (password !== confirm) {
+          showAlert('As senhas não conferem.');
+          return;
+        }
+
+        $('#register-btn').addClass('is-loading');
+        $('#auth-alert').hide();
+
+        const newUser = {
+          username: username,
+          password: password
+        };
+
+        $.ajax({
+          url: '/api/usuarios',
+          type: 'POST',
+          contentType: 'application/json',
+          data: JSON.stringify(newUser),
+          success: function() {
+            $('#register-btn').removeClass('is-loading');
+            // Reset fields
+            $('#register-username').val('');
+            $('#register-password').val('');
+            $('#register-confirm').val('');
+            
+            // Switch to login tab and show success message
+            switchTab('login');
+            showAlert('Conta criada com sucesso! Faça seu login.', 'success');
+          },
+          error: function(xhr) {
+            $('#register-btn').removeClass('is-loading');
+            let errorMsg = 'Erro ao realizar o cadastro. Tente outro usuário.';
+            if (xhr.responseJSON && xhr.responseJSON.message) {
+              errorMsg = xhr.responseJSON.message;
+            }
+            showAlert(errorMsg);
+          }
+        });
+      });
+    });
+  </script>
+</body>
 </html>

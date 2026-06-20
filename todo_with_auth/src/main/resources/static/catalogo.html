@@ -1,0 +1,848 @@
+<!DOCTYPE html>
+<html lang="pt-BR" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Livraria Conceito - Home</title>
+  <!-- Bulma CSS Framework -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.1/css/bulma.min.css">
+  <!-- Google Fonts: Inter & Playfair Display -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+  <!-- FontAwesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <!-- Custom Styles -->
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- Hero Section -->
+  <section class="hero is-relative custom-hero">
+    <!-- Hero Header (Navbar) -->
+    <div class="hero-head">
+      <nav class="navbar is-transparent" role="navigation" aria-label="main navigation" id="main-navbar">
+        <div class="container">
+          <div class="navbar-brand">
+            <a class="navbar-item logo-brand is-flex is-align-items-center" href="catalogo.html" style="gap: 0.75rem; padding: 0.5rem 0.75rem;">
+              <img src="assets/logo.png" alt="Relíquia Escrita" style="max-height: 40px; filter: brightness(0) invert(1) drop-shadow(0 2px 4px rgba(0,0,0,0.15));">
+              <span class="logo-text" style="font-size: 1.40rem; margin: 0; line-height: 1;">Relíquia Escrita</span>
+            </a>
+            <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarMenu">
+              <span aria-hidden="true"></span>
+              <span aria-hidden="true"></span>
+              <span aria-hidden="true"></span>
+              <span aria-hidden="true"></span>
+            </a>
+          </div>
+
+          <div id="navbarMenu" class="navbar-menu">
+            <div class="navbar-end">
+              <a class="navbar-item custom-nav-item is-active" href="catalogo.html">Catálogo</a>
+              <a class="navbar-item custom-nav-item" href="compras.html">
+                Compras
+                <span class="tag is-rounded is-danger cart-badge ml-2" id="cart-badge" style="display: none;">0</span>
+              </a>
+              <a class="navbar-item custom-nav-item" href="leituras.html">Leituras</a>
+              <a class="navbar-item custom-nav-item" href="configuracoes.html">Configurações</a>
+              <a class="navbar-item custom-nav-item" id="nav-logout-btn" href="#">Sair</a>
+              <a class="navbar-item theme-toggle" id="theme-toggle-btn" aria-label="Alternar tema">
+                <i class="fa-regular fa-moon toggle-icon"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </div>
+
+    <!-- Hero Body (Empty for aesthetic spacing) -->
+    <div class="hero-body is-flex is-align-items-flex-end pb-0">
+      <div class="container is-relative">
+        <!-- Inside space if needed, keeping layout empty for styling window background -->
+      </div>
+    </div>
+
+    <!-- Floating Cards Section (Overlapping the Hero boundary) -->
+    <div class="hero-foot">
+      <div class="container px-4">
+        <div class="columns is-mobile is-multiline glass-pills-container">
+          <div class="column is-6-mobile is-3-tablet">
+            <a href="#ofertas" class="glass-pill-card">
+              <div class="pill-icon">
+                <i class="fa-solid fa-percent"></i>
+              </div>
+              <div class="pill-text">
+                <span class="pill-title">Ofertas e Cupons</span>
+              </div>
+            </a>
+          </div>
+          <div class="column is-6-mobile is-3-tablet">
+            <a href="#melhores" class="glass-pill-card">
+              <div class="pill-icon">
+                <i class="fa-solid fa-trophy"></i>
+              </div>
+              <div class="pill-text">
+                <span class="pill-title">Melhores do Ano</span>
+              </div>
+            </a>
+          </div>
+          <div class="column is-6-mobile is-3-tablet">
+            <a href="#novidades" class="glass-pill-card">
+              <div class="pill-icon">
+                <i class="fa-solid fa-newspaper"></i>
+              </div>
+              <div class="pill-text">
+                <span class="pill-title">Confira as Novidades</span>
+              </div>
+            </a>
+          </div>
+          <div class="column is-6-mobile is-3-tablet">
+            <a href="#assine" class="glass-pill-card">
+              <div class="pill-icon">
+                <i class="fa-solid fa-crown"></i>
+              </div>
+              <div class="pill-text">
+                <span class="pill-title">Assine Já</span>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Main Content Area -->
+  <main class="main-content py-6">
+    <div class="container px-4">
+
+      <!-- Section 1: Ofertas e Cupons (#ofertas) -->
+      <section id="ofertas" class="book-section py-5 mb-5">
+        <h2 class="title is-4 font-serif section-title">Ofertas e Cupons</h2>
+        
+        <div class="columns is-multiline">
+          <!-- Promo Coupon Card -->
+          <div class="column is-12 mb-5">
+            <div class="coupon-card">
+              <h3 class="title is-5 font-serif mb-2" style="color: var(--color-primary-brown-dark);">Ganhe 10% de Desconto!</h3>
+              <p class="is-size-6 mb-3">Use o cupom abaixo em sua primeira compra física no nosso sebo ou para resgatar brindes!</p>
+              <div class="coupon-code">RELIQUIA10</div>
+              <p class="is-size-7 text-muted">Apresente este código no caixa ou informe no seu pedido.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="columns is-multiline is-mobile book-grid">
+          <!-- Book 11 -->
+          <div class="column is-6-mobile is-3-tablet is-one-fifth-desktop">
+            <div class="book-card card" data-id="book-11" data-title="Vidas Secas" data-author="Graciliano Ramos" data-price="R$ 32,00" data-desc="O clássico do romance regionalista que relata a saga de Fabiano e sua família de retirantes que fogem da seca devastadora no sertão nordestino." data-bg="linear-gradient(135deg, #c05621, #7b341e)">
+              <div class="card-image">
+                <figure class="image is-2by3 book-cover-container">
+                  <img src="assets/vidas_secas.jpg" alt="Vidas Secas" class="book-cover">
+                </figure>
+              </div>
+              <div class="card-content-custom pt-3 px-1 pb-1">
+                <h3 class="book-title font-serif">Vidas Secas</h3>
+                <div class="is-flex is-justify-content-space-between is-align-items-center mt-2">
+                  <p class="book-price">R$ 32,00</p>
+                  <div class="quantity-selector">
+                    <button class="button quantity-btn minus-btn" aria-label="Remover do carrinho" disabled>
+                      <i class="fa-solid fa-minus"></i>
+                    </button>
+                    <span class="quantity-value">0</span>
+                    <button class="button quantity-btn plus-btn" aria-label="Adicionar ao carrinho">
+                      <i class="fa-solid fa-plus"></i>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Book 12 -->
+          <div class="column is-6-mobile is-3-tablet is-one-fifth-desktop">
+            <div class="book-card card" data-id="book-12" data-title="A Garota no Trem" data-author="Paula Hawkins" data-price="R$ 29,90" data-desc="Um thriller psicológico eletrizante que narra a obsessão de Rachel por um casal que ela observa todos os dias da janela do trem, até testemunhar algo chocante." data-bg="linear-gradient(135deg, #374151, #1f2937)">
+              <div class="card-image">
+                <figure class="image is-2by3 book-cover-container">
+                  <img src="assets/a_garota_no_trem_paula_hawkins.jpg" alt="A Garota no Trem" class="book-cover">
+                </figure>
+              </div>
+              <div class="card-content-custom pt-3 px-1 pb-1">
+                <h3 class="book-title font-serif">A Garota no Trem</h3>
+                <div class="is-flex is-justify-content-space-between is-align-items-center mt-2">
+                  <p class="book-price">R$ 29,90</p>
+                  <div class="quantity-selector">
+                    <button class="button quantity-btn minus-btn" aria-label="Remover do carrinho" disabled>
+                      <i class="fa-solid fa-minus"></i>
+                    </button>
+                    <span class="quantity-value">0</span>
+                    <button class="button quantity-btn plus-btn" aria-label="Adicionar ao carrinho">
+                      <i class="fa-solid fa-plus"></i>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Book 13 -->
+          <div class="column is-6-mobile is-3-tablet is-one-fifth-desktop">
+            <div class="book-card card" data-id="book-13" data-title="O Poder do Hábito" data-author="Charles Duhigg" data-price="R$ 34,90" data-desc="Uma análise reveladora sobre como os hábitos funcionam e como podemos alterá-los em nossa vida pessoal, profissional e na sociedade para alcançar o sucesso." data-bg="linear-gradient(135deg, #2c3e50, #0f172a)">
+              <div class="card-image">
+                <figure class="image is-2by3 book-cover-container">
+                  <img src="assets/o_poder_do_habito.jpg" alt="O Poder do Hábito" class="book-cover">
+                </figure>
+              </div>
+              <div class="card-content-custom pt-3 px-1 pb-1">
+                <h3 class="book-title font-serif">O Poder do Hábito</h3>
+                <div class="is-flex is-justify-content-space-between is-align-items-center mt-2">
+                  <p class="book-price">R$ 34,90</p>
+                  <div class="quantity-selector">
+                    <button class="button quantity-btn minus-btn" aria-label="Remover do carrinho" disabled>
+                      <i class="fa-solid fa-minus"></i>
+                    </button>
+                    <span class="quantity-value">0</span>
+                    <button class="button quantity-btn plus-btn" aria-label="Adicionar ao carrinho">
+                      <i class="fa-solid fa-plus"></i>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Book 14 -->
+          <div class="column is-6-mobile is-3-tablet is-one-fifth-desktop">
+            <div class="book-card card" data-id="book-14" data-title="Pai Rico Pai Pobre" data-author="Robert Kiyosaki" data-price="R$ 37,50" data-desc="O livro de finanças pessoais mais vendido do mundo. Apresenta valiosas lições sobre dinheiro e investimentos sob a ótica de dois pais com visões opostas." data-bg="linear-gradient(135deg, #5b21b6, #31105e)">
+              <div class="card-image">
+                <figure class="image is-2by3 book-cover-container">
+                  <img src="assets/pai_rico_pai_pobre_robert_kiyosaki.jpg" alt="Pai Rico Pai Pobre" class="book-cover">
+                </figure>
+              </div>
+              <div class="card-content-custom pt-3 px-1 pb-1">
+                <h3 class="book-title font-serif">Pai Rico Pai Pobre</h3>
+                <div class="is-flex is-justify-content-space-between is-align-items-center mt-2">
+                  <p class="book-price">R$ 37,50</p>
+                  <div class="quantity-selector">
+                    <button class="button quantity-btn minus-btn" aria-label="Remover do carrinho" disabled>
+                      <i class="fa-solid fa-minus"></i>
+                    </button>
+                    <span class="quantity-value">0</span>
+                    <button class="button quantity-btn plus-btn" aria-label="Adicionar ao carrinho">
+                      <i class="fa-solid fa-plus"></i>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Book 15 -->
+          <div class="column is-6-mobile is-3-tablet is-one-fifth-desktop">
+            <div class="book-card card" data-id="book-15" data-title="Cem Anos de Solidão" data-author="Gabriel García Márquez" data-price="R$ 44,00" data-desc="A obra-prima do realismo mágico que narra a saga multigeracional da família Buendía na misteriosa e isolada aldeia de Macondo." data-bg="linear-gradient(135deg, #1b4d3e, #0f2d24)">
+              <div class="card-image">
+                <figure class="image is-2by3 book-cover-container">
+                  <img src="assets/cem_anos_de_solidão_gabriel_garcía_márquez.jpg" alt="Cem Anos de Solidão" class="book-cover">
+                </figure>
+              </div>
+              <div class="card-content-custom pt-3 px-1 pb-1">
+                <h3 class="book-title font-serif">Cem Anos de Solidão</h3>
+                <div class="is-flex is-justify-content-space-between is-align-items-center mt-2">
+                  <p class="book-price">R$ 44,00</p>
+                  <div class="quantity-selector">
+                    <button class="button quantity-btn minus-btn" aria-label="Remover do carrinho" disabled>
+                      <i class="fa-solid fa-minus"></i>
+                    </button>
+                    <span class="quantity-value">0</span>
+                    <button class="button quantity-btn plus-btn" aria-label="Adicionar ao carrinho">
+                      <i class="fa-solid fa-plus"></i>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Book 16 -->
+          <div class="column is-6-mobile is-3-tablet is-one-fifth-desktop">
+            <div class="book-card card" data-id="book-16" data-title="O Pequeno Príncipe" data-author="Antoine de Saint-Exupéry" data-price="R$ 19,90" data-desc="Uma história poética e filosófica sobre a amizade, o amor e a perda, contada pelo olhar puro de um jovem habitante do asteroide B-612." data-bg="linear-gradient(135deg, #1d4ed8, #172554)">
+              <div class="card-image">
+                <figure class="image is-2by3 book-cover-container">
+                  <img src="assets/o_pequeno_príncipe_antoine_de_saintexupéry.jpg" alt="O Pequeno Príncipe" class="book-cover">
+                </figure>
+              </div>
+              <div class="card-content-custom pt-3 px-1 pb-1">
+                <h3 class="book-title font-serif">O Pequeno Príncipe</h3>
+                <div class="is-flex is-justify-content-space-between is-align-items-center mt-2">
+                  <p class="book-price">R$ 19,90</p>
+                  <div class="quantity-selector">
+                    <button class="button quantity-btn minus-btn" aria-label="Remover do carrinho" disabled>
+                      <i class="fa-solid fa-minus"></i>
+                    </button>
+                    <span class="quantity-value">0</span>
+                    <button class="button quantity-btn plus-btn" aria-label="Adicionar ao carrinho">
+                      <i class="fa-solid fa-plus"></i>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Book 17 -->
+          <div class="column is-6-mobile is-3-tablet is-one-fifth-desktop">
+            <div class="book-card card" data-id="book-17" data-title="Mulheres que Correm com os Lobos" data-author="Clarissa Pinkola Estés" data-price="R$ 48,00" data-desc="Um estudo profundo sobre a psique feminina e os mitos associados à Mulher Selvagem, ajudando a resgatar a força e a sabedoria ancestrais das mulheres." data-bg="linear-gradient(135deg, #1e1b4b, #0f0a2d)">
+              <div class="card-image">
+                <figure class="image is-2by3 book-cover-container">
+                  <img src="assets/mulheres_que_correm_com_os_lobos_clarissa_pinkola_.jpg" alt="Mulheres que Correm com os Lobos" class="book-cover">
+                </figure>
+              </div>
+              <div class="card-content-custom pt-3 px-1 pb-1">
+                <h3 class="book-title font-serif">Mulheres que Correm com os Lobos</h3>
+                <div class="is-flex is-justify-content-space-between is-align-items-center mt-2">
+                  <p class="book-price">R$ 48,00</p>
+                  <div class="quantity-selector">
+                    <button class="button quantity-btn minus-btn" aria-label="Remover do carrinho" disabled>
+                      <i class="fa-solid fa-minus"></i>
+                    </button>
+                    <span class="quantity-value">0</span>
+                    <button class="button quantity-btn plus-btn" aria-label="Adicionar ao carrinho">
+                      <i class="fa-solid fa-plus"></i>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Book 18 -->
+          <div class="column is-6-mobile is-3-tablet is-one-fifth-desktop">
+            <div class="book-card card" data-id="book-18" data-title="A Sutil Arte de Ligar o Foda-se" data-author="Mark Manson" data-price="R$ 24,90" data-desc="Um livro de autoajuda realista que propõe que paremos de tentar ser positivos o tempo todo para focarmos no que realmente importa." data-bg="linear-gradient(135deg, #ea580c, #7c2d12)">
+              <div class="card-image">
+                <figure class="image is-2by3 book-cover-container">
+                  <img src="assets/a_sutil_arte_de_ligar_o_fodase_mark_manson.jpg" alt="A Sutil Arte de Ligar o Foda-se" class="book-cover">
+                </figure>
+              </div>
+              <div class="card-content-custom pt-3 px-1 pb-1">
+                <h3 class="book-title font-serif">A Sutil Arte de Ligar o Foda-se</h3>
+                <div class="is-flex is-justify-content-space-between is-align-items-center mt-2">
+                  <p class="book-price">R$ 24,90</p>
+                  <div class="quantity-selector">
+                    <button class="button quantity-btn minus-btn" aria-label="Remover do carrinho" disabled>
+                      <i class="fa-solid fa-minus"></i>
+                    </button>
+                    <span class="quantity-value">0</span>
+                    <button class="button quantity-btn plus-btn" aria-label="Adicionar ao carrinho">
+                      <i class="fa-solid fa-plus"></i>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Book 19 -->
+          <div class="column is-6-mobile is-3-tablet is-one-fifth-desktop">
+            <div class="book-card card" data-id="book-19" data-title="Os Sete Maridos de Evelyn Hugo" data-author="Taylor Jenkins Reid" data-price="R$ 39,90" data-desc="A lendária estrela de Hollywood Evelyn Hugo decide contar sua verdadeira história e seus segredos mais íntimos, revelando um grande amor proibido." data-bg="linear-gradient(135deg, #064e3b, #022c22)">
+              <div class="card-image">
+                <figure class="image is-2by3 book-cover-container">
+                  <img src="assets/os_sete_maridos_de_evelyn_hugo_taylor_jenkins_reid.jpg" alt="Os Sete Maridos de Evelyn Hugo" class="book-cover">
+                </figure>
+              </div>
+              <div class="card-content-custom pt-3 px-1 pb-1">
+                <h3 class="book-title font-serif">Os Sete Maridos de Evelyn Hugo</h3>
+                <div class="is-flex is-justify-content-space-between is-align-items-center mt-2">
+                  <p class="book-price">R$ 39,90</p>
+                  <div class="quantity-selector">
+                    <button class="button quantity-btn minus-btn" aria-label="Remover do carrinho" disabled>
+                      <i class="fa-solid fa-minus"></i>
+                    </button>
+                    <span class="quantity-value">0</span>
+                    <button class="button quantity-btn plus-btn" aria-label="Adicionar ao carrinho">
+                      <i class="fa-solid fa-plus"></i>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Book 20 -->
+          <div class="column is-6-mobile is-3-tablet is-one-fifth-desktop">
+            <div class="book-card card" data-id="book-20" data-title="Mentirosos" data-author="E. Lockhart" data-price="R$ 22,00" data-desc="Uma família rica e perfeita, uma ilha particular e um segredo perturbador. Um suspense instigante sobre mentiras, segredos e o preço da perfeição." data-bg="linear-gradient(135deg, #0e7490, #155e75)">
+              <div class="card-image">
+                <figure class="image is-2by3 book-cover-container">
+                  <img src="assets/mentirosos_e_lockhart.jpg" alt="Mentirosos" class="book-cover">
+                </figure>
+              </div>
+              <div class="card-content-custom pt-3 px-1 pb-1">
+                <h3 class="book-title font-serif">Mentirosos</h3>
+                <div class="is-flex is-justify-content-space-between is-align-items-center mt-2">
+                  <p class="book-price">R$ 22,00</p>
+                  <div class="quantity-selector">
+                    <button class="button quantity-btn minus-btn" aria-label="Remover do carrinho" disabled>
+                      <i class="fa-solid fa-minus"></i>
+                    </button>
+                    <span class="quantity-value">0</span>
+                    <button class="button quantity-btn plus-btn" aria-label="Adicionar ao carrinho">
+                      <i class="fa-solid fa-plus"></i>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Book 21 -->
+          <div class="column is-6-mobile is-3-tablet is-one-fifth-desktop">
+            <div class="book-card card" data-id="book-21" data-title="É Assim que Acaba" data-author="Colleen Hoover" data-price="R$ 34,00" data-desc="O romance mais famoso de Colleen Hoover. Uma emocionante jornada sobre amor, superação, força pessoal e as complexidades de relacionamentos difíceis." data-bg="linear-gradient(135deg, #db2777, #831843)">
+              <div class="card-image">
+                <figure class="image is-2by3 book-cover-container">
+                  <img src="assets/é_assim_que_acaba_colleen_hoover.jpg" alt="É Assim que Acaba" class="book-cover">
+                </figure>
+              </div>
+              <div class="card-content-custom pt-3 px-1 pb-1">
+                <h3 class="book-title font-serif">É Assim que Acaba</h3>
+                <div class="is-flex is-justify-content-space-between is-align-items-center mt-2">
+                  <p class="book-price">R$ 34,00</p>
+                  <div class="quantity-selector">
+                    <button class="button quantity-btn minus-btn" aria-label="Remover do carrinho" disabled>
+                      <i class="fa-solid fa-minus"></i>
+                    </button>
+                    <span class="quantity-value">0</span>
+                    <button class="button quantity-btn plus-btn" aria-label="Adicionar ao carrinho">
+                      <i class="fa-solid fa-plus"></i>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Book 22 -->
+          <div class="column is-6-mobile is-3-tablet is-one-fifth-desktop">
+            <div class="book-card card" data-id="book-22" data-title="Amor e Gelato" data-author="Jenna Evans Welch" data-price="R$ 27,00" data-desc="Lina viaja para a Itália em busca do passado de sua mãe e descobre os encantos de Florença, novas amizades e, é claro, um grande amor." data-bg="linear-gradient(135deg, #38bdf8, #0369a1)">
+              <div class="card-image">
+                <figure class="image is-2by3 book-cover-container">
+                  <img src="assets/amor_e_gelato_jenna_evans_welch.jpg" alt="Amor e Gelato" class="book-cover">
+                </figure>
+              </div>
+              <div class="card-content-custom pt-3 px-1 pb-1">
+                <h3 class="book-title font-serif">Amor e Gelato</h3>
+                <div class="is-flex is-justify-content-space-between is-align-items-center mt-2">
+                  <p class="book-price">R$ 27,00</p>
+                  <div class="quantity-selector">
+                    <button class="button quantity-btn minus-btn" aria-label="Remover do carrinho" disabled>
+                      <i class="fa-solid fa-minus"></i>
+                    </button>
+                    <span class="quantity-value">0</span>
+                    <button class="button quantity-btn plus-btn" aria-label="Adicionar ao carrinho">
+                      <i class="fa-solid fa-plus"></i>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Book 23 -->
+          <div class="column is-6-mobile is-3-tablet is-one-fifth-desktop">
+            <div class="book-card card" data-id="book-23" data-title="Rápido e Devagar" data-author="Daniel Kahneman" data-price="R$ 49,90" data-desc="O prêmio Nobel de economia Daniel Kahneman nos leva a uma viagem pela mente humana e nos mostra como tomamos decisões na vida pessoal e nos negócios." data-bg="linear-gradient(135deg, #0284c7, #075985)">
+              <div class="card-image">
+                <figure class="image is-2by3 book-cover-container">
+                  <img src="assets/rápido_e_devagar_daniel_kahneman.jpg" alt="Rápido e Devagar" class="book-cover">
+                </figure>
+              </div>
+              <div class="card-content-custom pt-3 px-1 pb-1">
+                <h3 class="book-title font-serif">Rápido e Devagar</h3>
+                <div class="is-flex is-justify-content-space-between is-align-items-center mt-2">
+                  <p class="book-price">R$ 49,90</p>
+                  <div class="quantity-selector">
+                    <button class="button quantity-btn minus-btn" aria-label="Remover do carrinho" disabled>
+                      <i class="fa-solid fa-minus"></i>
+                    </button>
+                    <span class="quantity-value">0</span>
+                    <button class="button quantity-btn plus-btn" aria-label="Adicionar ao carrinho">
+                      <i class="fa-solid fa-plus"></i>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <hr class="section-divider">
+
+      <!-- Section 2: Melhores do Ano (#melhores) -->
+      <section id="melhores" class="book-section py-5 mb-5">
+        <h2 class="title is-4 font-serif section-title">Melhores do Ano</h2>
+        <div class="columns is-multiline is-mobile book-grid">
+          <!-- Book 1 -->
+          <div class="column is-6-mobile is-3-tablet is-one-fifth-desktop">
+            <div class="book-card card" data-id="book-1" data-title="Crime e Castigo" data-author="Fiódor Dostoiévski" data-price="R$ 62,00" data-desc="Uma das obras mais célebres da literatura mundial. Narra a história de Raskólnikov, um jovem estudante que comete um assassinato em São Petersburgo e lida com as consequências psicológicas e morais do seu ato." data-bg="linear-gradient(135deg, #1f2937, #111827)">
+              <div class="card-image">
+                <figure class="image is-2by3 book-cover-container">
+                  <img src="assets/crime_e_castigo.jpg" alt="Crime e Castigo" class="book-cover">
+                </figure>
+              </div>
+              <div class="card-content-custom pt-3 px-1 pb-1">
+                <h3 class="book-title font-serif">Crime e Castigo</h3>
+                <div class="is-flex is-justify-content-space-between is-align-items-center mt-2">
+                  <p class="book-price">R$ 62,00</p>
+                  <div class="quantity-selector">
+                    <button class="button quantity-btn minus-btn" aria-label="Remover do carrinho" disabled>
+                      <i class="fa-solid fa-minus"></i>
+                    </button>
+                    <span class="quantity-value">0</span>
+                    <button class="button quantity-btn plus-btn" aria-label="Adicionar ao carrinho">
+                      <i class="fa-solid fa-plus"></i>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Book 2 -->
+          <div class="column is-6-mobile is-3-tablet is-one-fifth-desktop">
+            <div class="book-card card" data-id="book-2" data-title="A Revolução dos Bichos" data-author="George Orwell" data-price="R$ 54,00" data-desc="Uma sátira clássica sobre a ditadura e o totalitarismo, onde os animais de uma fazenda se rebelam contra seus donos humanos apenas para cair sob o controle autoritário dos porcos." data-bg="linear-gradient(135deg, #2b6cb0, #1a365d)">
+              <div class="card-image">
+                <figure class="image is-2by3 book-cover-container">
+                  <img src="assets/a_revolução_dos_bichos_george_orwell.jpg" alt="A Revolução dos Bichos" class="book-cover">
+                </figure>
+              </div>
+              <div class="card-content-custom pt-3 px-1 pb-1">
+                <h3 class="book-title font-serif">A Revolução dos Bichos</h3>
+                <div class="is-flex is-justify-content-space-between is-align-items-center mt-2">
+                  <p class="book-price">R$ 54,00</p>
+                  <div class="quantity-selector">
+                    <button class="button quantity-btn minus-btn" aria-label="Remover do carrinho" disabled>
+                      <i class="fa-solid fa-minus"></i>
+                    </button>
+                    <span class="quantity-value">0</span>
+                    <button class="button quantity-btn plus-btn" aria-label="Adicionar ao carrinho">
+                      <i class="fa-solid fa-plus"></i>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Book 3 -->
+          <div class="column is-6-mobile is-3-tablet is-one-fifth-desktop">
+            <div class="book-card card" data-id="book-3" data-title="Água Viva" data-author="Clarice Lispector" data-price="R$ 40,00" data-desc="Um fluxo de consciência poético e profundo. Clarice Lispector explora o ato da criação, o tempo, e a essência do ser em uma prosa poética singular." data-bg="linear-gradient(135deg, #319795, #234e52)">
+              <div class="card-image">
+                <figure class="image is-2by3 book-cover-container">
+                  <img src="assets/agua_viva.jpg" alt="Água Viva" class="book-cover">
+                </figure>
+              </div>
+              <div class="card-content-custom pt-3 px-1 pb-1">
+                <h3 class="book-title font-serif">Água Viva</h3>
+                <div class="is-flex is-justify-content-space-between is-align-items-center mt-2">
+                  <p class="book-price">R$ 40,00</p>
+                  <div class="quantity-selector">
+                    <button class="button quantity-btn minus-btn" aria-label="Remover do carrinho" disabled>
+                      <i class="fa-solid fa-minus"></i>
+                    </button>
+                    <span class="quantity-value">0</span>
+                    <button class="button quantity-btn plus-btn" aria-label="Adicionar ao carrinho">
+                      <i class="fa-solid fa-plus"></i>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Book 4 -->
+          <div class="column is-6-mobile is-3-tablet is-one-fifth-desktop">
+            <div class="book-card card" data-id="book-4" data-title="A Hora da Estrela" data-author="Clarice Lispector" data-price="R$ 37,00" data-desc="A história comovente de Macabéa, uma datilógrafa alagoana órfã e solitária no Rio de Janeiro, contada pelo narrador fictício Rodrigo S.M." data-bg="linear-gradient(135deg, #dd6b20, #7b341e)">
+              <div class="card-image">
+                <figure class="image is-2by3 book-cover-container">
+                  <img src="assets/hora_estrela.jpg" alt="A Hora da Estrela" class="book-cover">
+                </figure>
+              </div>
+              <div class="card-content-custom pt-3 px-1 pb-1">
+                <h3 class="book-title font-serif">A Hora da Estrela</h3>
+                <div class="is-flex is-justify-content-space-between is-align-items-center mt-2">
+                  <p class="book-price">R$ 37,00</p>
+                  <div class="quantity-selector">
+                    <button class="button quantity-btn minus-btn" aria-label="Remover do carrinho" disabled>
+                      <i class="fa-solid fa-minus"></i>
+                    </button>
+                    <span class="quantity-value">0</span>
+                    <button class="button quantity-btn plus-btn" aria-label="Adicionar ao carrinho">
+                      <i class="fa-solid fa-plus"></i>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Book 5 -->
+          <div class="column is-6-mobile is-3-tablet is-one-fifth-desktop">
+            <div class="book-card card" data-id="book-5" data-title="Livro do Desassossego" data-author="Fernando Pessoa" data-price="R$ 49,00" data-desc="A obra-prima em prosa de Fernando Pessoa, assinada por seu semi-heterônimo Bernardo Soares. Uma coleção de fragmentos, diários e meditações existenciais." data-bg="linear-gradient(135deg, #4a5568, #2d3748)">
+              <div class="card-image">
+                <figure class="image is-2by3 book-cover-container">
+                  <img src="assets/livro_desassossego.jpg" alt="Livro do Desassossego" class="book-cover">
+                </figure>
+              </div>
+              <div class="card-content-custom pt-3 px-1 pb-1">
+                <h3 class="book-title font-serif">Livro do Desassossego</h3>
+                <div class="is-flex is-justify-content-space-between is-align-items-center mt-2">
+                  <p class="book-price">R$ 49,00</p>
+                  <div class="quantity-selector">
+                    <button class="button quantity-btn minus-btn" aria-label="Remover do carrinho" disabled>
+                      <i class="fa-solid fa-minus"></i>
+                    </button>
+                    <span class="quantity-value">0</span>
+                    <button class="button quantity-btn plus-btn" aria-label="Adicionar ao carrinho">
+                      <i class="fa-solid fa-plus"></i>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <hr class="section-divider">
+
+      <!-- Section 3: Confira as Novidades (#novidades) -->
+      <section id="novidades" class="book-section py-5 mb-5">
+        <h2 class="title is-4 font-serif section-title">Confira as Novidades</h2>
+        <div class="columns is-multiline is-mobile book-grid">
+          <!-- Book 6 -->
+          <div class="column is-6-mobile is-3-tablet is-one-fifth-desktop">
+            <div class="book-card card" data-id="book-6" data-title="Dom Casmurro" data-author="Machado de Assis" data-price="R$ 35,00" data-desc="Um dos maiores clássicos da literatura brasileira. O narrador Bento Santiago reconta sua vida e tenta responder à dúvida que o assombra por décadas: teria Capitu o traído com Escobar?" data-bg="linear-gradient(135deg, #2b3a4a, #1a233d)">
+              <div class="card-image">
+                <figure class="image is-2by3 book-cover-container">
+                  <img src="assets/dom_casmurro_machado_de_assis.jpg" alt="Dom Casmurro" class="book-cover">
+                </figure>
+              </div>
+              <div class="card-content-custom pt-3 px-1 pb-1">
+                <h3 class="book-title font-serif">Dom Casmurro</h3>
+                <div class="is-flex is-justify-content-space-between is-align-items-center mt-2">
+                  <p class="book-price">R$ 35,00</p>
+                  <div class="quantity-selector">
+                    <button class="button quantity-btn minus-btn" aria-label="Remover do carrinho" disabled>
+                      <i class="fa-solid fa-minus"></i>
+                    </button>
+                    <span class="quantity-value">0</span>
+                    <button class="button quantity-btn plus-btn" aria-label="Adicionar ao carrinho">
+                      <i class="fa-solid fa-plus"></i>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Book 7 -->
+          <div class="column is-6-mobile is-3-tablet is-one-fifth-desktop">
+            <div class="book-card card" data-id="book-7" data-title="O Alquimista" data-author="Paulo Coelho" data-price="R$ 39,00" data-desc="A jornada mágica do jovem pastor espanhol Santiago rumo ao Egito, em busca de um tesouro escondido nas pirâmides e da descoberta de sua Lenda Pessoal." data-bg="linear-gradient(135deg, #1b365d, #0d1b2a)">
+              <div class="card-image">
+                <figure class="image is-2by3 book-cover-container">
+                  <img src="assets/o_alquimista_paulo_coelho.jpg" alt="O Alquimista" class="book-cover">
+                </figure>
+              </div>
+              <div class="card-content-custom pt-3 px-1 pb-1">
+                <h3 class="book-title font-serif">O Alquimista</h3>
+                <div class="is-flex is-justify-content-space-between is-align-items-center mt-2">
+                  <p class="book-price">R$ 39,00</p>
+                  <div class="quantity-selector">
+                    <button class="button quantity-btn minus-btn" aria-label="Remover do carrinho" disabled>
+                      <i class="fa-solid fa-minus"></i>
+                    </button>
+                    <span class="quantity-value">0</span>
+                    <button class="button quantity-btn plus-btn" aria-label="Adicionar ao carrinho">
+                      <i class="fa-solid fa-plus"></i>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Book 8 -->
+          <div class="column is-6-mobile is-3-tablet is-one-fifth-desktop">
+            <div class="book-card card" data-id="book-8" data-title="Sapiens" data-author="Yuval Noah Harari" data-price="R$ 59,00" data-desc="Uma viagem fascinante pela história da humanidade, desde os primeiros hominídeos até os avanços tecnológicos de hoje, explicando como nossa espécie dominou o planeta." data-bg="linear-gradient(135deg, #4a4a4a, #1a1a1a)">
+              <div class="card-image">
+                <figure class="image is-2by3 book-cover-container">
+                  <img src="assets/sapiens_yuval_noah_harari.jpg" alt="Sapiens" class="book-cover">
+                </figure>
+              </div>
+              <div class="card-content-custom pt-3 px-1 pb-1">
+                <h3 class="book-title font-serif">Sapiens</h3>
+                <div class="is-flex is-justify-content-space-between is-align-items-center mt-2">
+                  <p class="book-price">R$ 59,00</p>
+                  <div class="quantity-selector">
+                    <button class="button quantity-btn minus-btn" aria-label="Remover do carrinho" disabled>
+                      <i class="fa-solid fa-minus"></i>
+                    </button>
+                    <span class="quantity-value">0</span>
+                    <button class="button quantity-btn plus-btn" aria-label="Adicionar ao carrinho">
+                      <i class="fa-solid fa-plus"></i>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Book 9 -->
+          <div class="column is-6-mobile is-3-tablet is-one-fifth-desktop">
+            <div class="book-card card" data-id="book-9" data-title="1984" data-author="George Orwell" data-price="R$ 45,00" data-desc="A aterrorizante distopia futurista onde o Grande Irmão controla tudo e todos, vigiando a população e punindo severamente qualquer indício de pensamento rebelde." data-bg="linear-gradient(135deg, #8b0000, #000000)">
+              <div class="card-image">
+                <figure class="image is-2by3 book-cover-container">
+                  <img src="assets/1984.jpg" alt="1984" class="book-cover">
+                </figure>
+              </div>
+              <div class="card-content-custom pt-3 px-1 pb-1">
+                <h3 class="book-title font-serif">1984</h3>
+                <div class="is-flex is-justify-content-space-between is-align-items-center mt-2">
+                  <p class="book-price">R$ 45,00</p>
+                  <div class="quantity-selector">
+                    <button class="button quantity-btn minus-btn" aria-label="Remover do carrinho" disabled>
+                      <i class="fa-solid fa-minus"></i>
+                    </button>
+                    <span class="quantity-value">0</span>
+                    <button class="button quantity-btn plus-btn" aria-label="Adicionar ao carrinho">
+                      <i class="fa-solid fa-plus"></i>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Book 10 -->
+          <div class="column is-6-mobile is-3-tablet is-one-fifth-desktop">
+            <div class="book-card card" data-id="book-10" data-title="Torto Arado" data-author="Itamar Vieira Junior" data-price="R$ 52,00" data-desc="Um romance épico e lírico sobre a vida de duas irmãs no sertão baiano, unidas por um acidente de infância e pela luta pela sobrevivência e pela terra." data-bg="linear-gradient(135deg, #5c4033, #2b1d0c)">
+              <div class="card-image">
+                <figure class="image is-2by3 book-cover-container">
+                  <img src="assets/torto_arado_itamar_vieira_junior.jpg" alt="Torto Arado" class="book-cover">
+                </figure>
+              </div>
+              <div class="card-content-custom pt-3 px-1 pb-1">
+                <h3 class="book-title font-serif">Torto Arado</h3>
+                <div class="is-flex is-justify-content-space-between is-align-items-center mt-2">
+                  <p class="book-price">R$ 52,00</p>
+                  <div class="quantity-selector">
+                    <button class="button quantity-btn minus-btn" aria-label="Remover do carrinho" disabled>
+                      <i class="fa-solid fa-minus"></i>
+                    </button>
+                    <span class="quantity-value">0</span>
+                    <button class="button quantity-btn plus-btn" aria-label="Adicionar ao carrinho">
+                      <i class="fa-solid fa-plus"></i>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <hr class="section-divider">
+
+      <!-- Section 4: Assine Já (#assine) -->
+      <section id="assine" class="book-section py-5">
+        <h2 class="title is-4 font-serif section-title">Clube de Assinaturas</h2>
+        <div class="subscription-card">
+          <div class="columns is-vcentered">
+            <div class="column is-8">
+              <h3 class="title is-4 font-serif mb-3" style="color: var(--color-primary-brown-dark);"><i class="fa-solid fa-crown mr-2 text-warning"></i>Clube Relíquia Escrita</h3>
+              <p class="mb-4">
+                Assine o nosso clube literário e receba mensalmente em sua casa um livro surpresa cuidadosamente selecionado por nossos curadores, acompanhado de brindes exclusivos e um marcador personalizado.
+              </p>
+              <div class="columns is-mobile is-multiline">
+                <div class="column is-6-mobile is-4-tablet">
+                  <div class="is-flex is-align-items-center" style="gap: 0.5rem;">
+                    <i class="fa-solid fa-truck text-success"></i>
+                    <span class="is-size-7">Frete Grátis</span>
+                  </div>
+                </div>
+                <div class="column is-6-mobile is-4-tablet">
+                  <div class="is-flex is-align-items-center" style="gap: 0.5rem;">
+                    <i class="fa-solid fa-gift text-success"></i>
+                    <span class="is-size-7">Brindes Exclusivos</span>
+                  </div>
+                </div>
+                <div class="column is-12-mobile is-4-tablet">
+                  <div class="is-flex is-align-items-center" style="gap: 0.5rem;">
+                    <i class="fa-solid fa-percent text-success"></i>
+                    <span class="is-size-7">15% Off no Catálogo</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="column is-4 has-text-centered-tablet">
+              <p class="is-size-4 font-serif mb-1" style="color: var(--color-accent-gold); font-weight: 700;">R$ 39,90<span class="is-size-7 text-muted" style="font-weight: normal;">/mês</span></p>
+              <button class="button is-rounded is-medium" style="background-color: var(--color-accent-gold); color: white; border: none; font-weight: 600; width: 100%;">
+                Assinar Agora
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="custom-footer py-6">
+    <div class="container px-4">
+      <div class="columns is-mobile is-multiline">
+        <!-- Coluna 1: Informações e Endereço -->
+        <div class="column is-12-mobile is-6-tablet">
+          <h2 class="title is-5 footer-heading font-serif">Relíquia Escrita</h2>
+          <p class="mb-3" style="color: #d1c7bd; font-size: 0.95rem;">
+            O seu ponto de encontro com a literatura e as boas histórias. Venha nos visitar ou compre online com toda a comodidade.
+          </p>
+          <div class="contact-item">
+            <span class="contact-icon"><i class="fa-solid fa-map-marker-alt"></i></span>
+            <span class="contact-link" style="text-decoration: none; cursor: default;">Rua dos Antiquários, 789 - Centro Histórico, Curitiba - PR</span>
+          </div>
+          <div class="contact-item">
+            <span class="contact-icon"><i class="fa-regular fa-clock"></i></span>
+            <span class="contact-link" style="text-decoration: none; cursor: default;">Seg. a Sex.: 09h30 às 18h30 | Sáb.: 09h00 às 14h00</span>
+          </div>
+        </div>
+        <!-- Coluna 2: Redes Sociais e Contato -->
+        <div class="column is-12-mobile is-6-tablet">
+          <h2 class="title is-5 footer-heading font-serif">Contatos & Redes</h2>
+          <div class="contact-item">
+            <span class="contact-icon"><i class="fa-regular fa-envelope"></i></span>
+            <a href="mailto:contato@reliquiaescrita.com.br" class="contact-link">contato@reliquiaescrita.com.br</a>
+          </div>
+          <div class="contact-item">
+            <span class="contact-icon"><i class="fa-brands fa-whatsapp"></i></span>
+            <a href="https://wa.me/5541987654321" target="_blank" class="contact-link">+55 (41) 98765-4321</a>
+          </div>
+          <div class="contact-item">
+            <span class="contact-icon"><i class="fa-brands fa-instagram"></i></span>
+            <a href="https://instagram.com/reliquiaescrita" target="_blank" class="contact-link">@reliquiaescrita</a>
+          </div>
+          <div class="contact-item">
+            <span class="contact-icon"><i class="fa-brands fa-facebook-f"></i></span>
+            <a href="https://facebook.com/reliquiaescrita" target="_blank" class="contact-link">/reliquiaescrita</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+
+
+  <!-- Cart Subtotal Footer -->
+  <div id="cart-subtotal-footer" class="cart-subtotal-footer" style="display: none;">
+    <div class="container px-4 is-flex is-justify-content-space-between is-align-items-center">
+      <div class="subtotal-info">
+        <span class="subtotal-label">Subtotal:</span>
+        <span class="subtotal-value font-serif" id="cart-subtotal-value">R$ 0,00</span>
+      </div>
+      <a href="compras.html" class="button is-rounded custom-modal-btn-buy">
+        Finalizar Compra
+      </a>
+    </div>
+  </div>
+
+  <!-- LGPD Cookie Banner -->
+  <div id="cookie-banner" class="cookie-banner" style="display: none;">
+    <div class="container px-4 is-flex is-justify-content-space-between is-align-items-center cookie-banner-content">
+      <p class="mb-0 cookie-text">
+        Utilizamos cookies e armazenamento local para personalizar sua experiência (como tema e fontes). Ao continuar navegando, você concorda com nossas políticas.
+      </p>
+      <button class="button is-small cookie-btn" id="accept-cookies">Entendi</button>
+    </div>
+  </div>
+
+  <!-- Javascript -->
+  <script src="script.js"></script>
+</body>
+</html>

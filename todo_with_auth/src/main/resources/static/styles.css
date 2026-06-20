@@ -1,0 +1,1134 @@
+/* ==========================================================================
+   Design System & Bulma Customizations (Theme-aligned Variables)
+   ========================================================================== */
+
+:root {
+  /* Font Families */
+  --font-sans: 'Inter', sans-serif;
+  --font-serif: 'Playfair Display', Georgia, serif;
+
+  /* Custom Color Tokens (Cozy Warm Bookstore Theme - Default "ouro") */
+  --color-primary-brown: #7c6b5e;
+  --color-primary-brown-dark: #635348;
+  --color-primary-brown-light: #9c8b7f;
+  --color-cream-bg: #faf9f6;
+  --color-cream-card: #f2efeb;
+  --color-text-dark: #2d2621;
+  --color-text-muted: #6b5c54;
+  --color-accent-gold: #c5a880;
+
+  /* Hero & Navbar variables */
+  --color-hero-overlay-start: rgba(45, 38, 33, 0.45);
+  --color-hero-overlay-mid: rgba(45, 38, 33, 0.3);
+  --color-hero-overlay-end: rgba(45, 38, 33, 0.7);
+  --color-navbar-scrolled: rgba(45, 38, 33, 0.78);
+
+  /* Bulma CSS Variable Overrides for Light Theme */
+  --bulma-body-background-color: var(--color-cream-bg);
+  --bulma-scheme-main: var(--color-cream-bg);
+  --bulma-text: var(--color-text-dark);
+  --bulma-title-color: var(--color-text-dark);
+  --bulma-subtitle-color: var(--color-text-muted);
+  --bulma-card-background-color: var(--color-cream-card);
+  --bulma-card-shadow: 0 4px 12px rgba(45, 38, 33, 0.06);
+  --bulma-navbar-background-color: transparent;
+  --bulma-footer-background-color: var(--color-primary-brown);
+  --bulma-footer-color: #f7f5f2;
+
+  /* Transitions */
+  --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Color Schemes - Light Theme Presets */
+html[data-color-scheme="azul"] {
+  --color-primary-brown: #1e3a8a;
+  --color-primary-brown-dark: #172554;
+  --color-primary-brown-light: #3b82f6;
+  --color-cream-bg: #f0f4f8;
+  --color-cream-card: #e2ecf5;
+  --color-text-dark: #1e293b;
+  --color-text-muted: #475569;
+  --color-accent-gold: #3b82f6;
+  --color-hero-overlay-start: rgba(15, 23, 42, 0.5);
+  --color-hero-overlay-mid: rgba(15, 23, 42, 0.35);
+  --color-hero-overlay-end: rgba(15, 23, 42, 0.75);
+  --color-navbar-scrolled: rgba(30, 58, 138, 0.95);
+}
+html[data-color-scheme="vermelho"] {
+  --color-primary-brown: #7f1d1d;
+  --color-primary-brown-dark: #450a0a;
+  --color-primary-brown-light: #ef4444;
+  --color-cream-bg: #fffbfb;
+  --color-cream-card: #f8ebeb;
+  --color-text-dark: #270e0e;
+  --color-text-muted: #5c3d3d;
+  --color-accent-gold: #ef4444;
+  --color-hero-overlay-start: rgba(69, 10, 10, 0.5);
+  --color-hero-overlay-mid: rgba(69, 10, 10, 0.35);
+  --color-hero-overlay-end: rgba(69, 10, 10, 0.75);
+  --color-navbar-scrolled: rgba(127, 29, 29, 0.95);
+}
+html[data-color-scheme="verde"] {
+  --color-primary-brown: #064e3b;
+  --color-primary-brown-dark: #022c22;
+  --color-primary-brown-light: #10b981;
+  --color-cream-bg: #f4f8f5;
+  --color-cream-card: #e6f0e9;
+  --color-text-dark: #0d241d;
+  --color-text-muted: #3d5c50;
+  --color-accent-gold: #10b981;
+  --color-hero-overlay-start: rgba(2, 44, 34, 0.5);
+  --color-hero-overlay-mid: rgba(2, 44, 34, 0.35);
+  --color-hero-overlay-end: rgba(2, 44, 34, 0.75);
+  --color-navbar-scrolled: rgba(6, 78, 59, 0.95);
+}
+html[data-color-scheme="roxo"] {
+  --color-primary-brown: #4c1d95;
+  --color-primary-brown-dark: #2e1065;
+  --color-primary-brown-light: #8b5cf6;
+  --color-cream-bg: #faf8ff;
+  --color-cream-card: #f1ebfc;
+  --color-text-dark: #1a0f30;
+  --color-text-muted: #574c70;
+  --color-accent-gold: #8b5cf6;
+  --color-hero-overlay-start: rgba(46, 16, 101, 0.5);
+  --color-hero-overlay-mid: rgba(46, 16, 101, 0.35);
+  --color-hero-overlay-end: rgba(46, 16, 101, 0.75);
+  --color-navbar-scrolled: rgba(76, 29, 149, 0.95);
+}
+html[data-color-scheme="laranja"] {
+  --color-primary-brown: #7c2d12;
+  --color-primary-brown-dark: #451a03;
+  --color-primary-brown-light: #f59e0b;
+  --color-cream-bg: #fffaf5;
+  --color-cream-card: #fcefe2;
+  --color-text-dark: #2d1500;
+  --color-text-muted: #6b3f17;
+  --color-accent-gold: #f59e0b;
+  --color-hero-overlay-start: rgba(69, 26, 3, 0.5);
+  --color-hero-overlay-mid: rgba(69, 26, 3, 0.35);
+  --color-hero-overlay-end: rgba(69, 26, 3, 0.75);
+  --color-navbar-scrolled: rgba(124, 45, 18, 0.95);
+}
+
+/* Dark Theme Overrides */
+html[data-theme="dark"] {
+  /* Default "ouro" dark tokens */
+  --color-cream-bg: #1c1815;
+  --color-cream-card: #28221e;
+  --color-text-dark: #ebdcd0;
+  --color-text-muted: #ab988d;
+  --color-hero-overlay-start: rgba(28, 24, 21, 0.6);
+  --color-hero-overlay-mid: rgba(28, 24, 21, 0.4);
+  --color-hero-overlay-end: rgba(28, 24, 21, 0.85);
+  --color-navbar-scrolled: rgba(28, 24, 21, 0.95);
+
+  /* Bulma CSS Variable Overrides for Dark Theme */
+  --bulma-body-background-color: var(--color-cream-bg);
+  --bulma-scheme-main: var(--color-cream-bg);
+  --bulma-text: var(--color-text-dark);
+  --bulma-title-color: var(--color-text-dark);
+  --bulma-subtitle-color: var(--color-text-muted);
+  --bulma-card-background-color: var(--color-cream-card);
+  --bulma-card-shadow: 0 6px 18px rgba(0, 0, 0, 0.25);
+  --bulma-modal-card-head-background-color: #251f1b;
+  --bulma-modal-card-body-background-color: var(--color-cream-bg);
+  --bulma-modal-card-foot-background-color: #251f1b;
+}
+
+/* Presets for Dark Theme Schemes */
+html[data-theme="dark"][data-color-scheme="azul"] {
+  --color-cream-bg: #0f172a;
+  --color-cream-card: #1e293b;
+  --color-text-dark: #f1f5f9;
+  --color-text-muted: #94a3b8;
+  --color-navbar-scrolled: rgba(15, 23, 42, 0.95);
+}
+html[data-theme="dark"][data-color-scheme="vermelho"] {
+  --color-cream-bg: #180808;
+  --color-cream-card: #240f0f;
+  --color-text-dark: #f9ebeb;
+  --color-text-muted: #c5a6a6;
+  --color-navbar-scrolled: rgba(24, 8, 8, 0.95);
+}
+html[data-theme="dark"][data-color-scheme="verde"] {
+  --color-cream-bg: #061410;
+  --color-cream-card: #0d2820;
+  --color-text-dark: #e6f2ec;
+  --color-text-muted: #9cc3b4;
+  --color-navbar-scrolled: rgba(6, 20, 16, 0.95);
+}
+html[data-theme="dark"][data-color-scheme="roxo"] {
+  --color-cream-bg: #120924;
+  --color-cream-card: #1e113a;
+  --color-text-dark: #f1ebfa;
+  --color-text-muted: #bdaecf;
+  --color-navbar-scrolled: rgba(18, 9, 36, 0.95);
+}
+html[data-theme="dark"][data-color-scheme="laranja"] {
+  --color-cream-bg: #1c0d02;
+  --color-cream-card: #2d1706;
+  --color-text-dark: #fcefe2;
+  --color-text-muted: #d4a373;
+  --color-navbar-scrolled: rgba(28, 13, 2, 0.95);
+}
+
+/* ==========================================================================
+   Global Layout & Typography
+   ========================================================================== */
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-sans);
+  color: var(--bulma-text);
+  background-color: var(--bulma-body-background-color);
+  transition: background-color 0.4s ease, color 0.4s ease;
+  min-height: 100vh;
+}
+
+.font-serif {
+  font-family: var(--font-serif);
+}
+
+.text-theme-override {
+  color: var(--bulma-text) !important;
+}
+
+.text-muted {
+  color: var(--color-text-muted) !important;
+}
+
+/* ==========================================================================
+   Cozy Hero & Navigation Banner
+   ========================================================================== */
+
+.custom-hero {
+  position: relative;
+  overflow: visible;
+  height: 520px;
+  /* Cozy fallback gradients + image reference using variables */
+  background: linear-gradient(to bottom, var(--color-hero-overlay-start) 0%, var(--color-hero-overlay-mid) 60%, var(--color-hero-overlay-end) 100%), 
+              url('assets/background.png'), 
+              linear-gradient(135deg, var(--color-primary-brown-light), var(--color-primary-brown-dark));
+  background-size: cover;
+  background-position: center;
+  background-attachment: scroll;
+  transition: var(--transition-smooth);
+  box-shadow: inset 0 -10px 30px rgba(0, 0, 0, 0.15);
+}
+
+.custom-hero::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 80px;
+  background: linear-gradient(to bottom, transparent, var(--bulma-body-background-color));
+  z-index: 5;
+  pointer-events: none;
+  transition: background-color 0.4s ease;
+}
+
+/* Adjust layout on smaller screens */
+@media screen and (max-width: 768px) {
+  .custom-hero {
+    height: auto;
+    padding-top: 90px !important; /* Space for the fixed navbar */
+    padding-bottom: 40px;
+  }
+  .glass-pills-container {
+    margin-top: -20px !important; /* Subtle overlap instead of severe clash */
+  }
+}
+
+/* Navbar Branding & Link Customizations */
+.logo-text {
+  font-family: var(--font-serif);
+  font-weight: 700;
+  font-style: italic;
+  font-size: 1.6rem;
+  color: #ffffff !important;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  letter-spacing: 0.05em;
+}
+
+.custom-nav-item {
+  color: rgba(255, 255, 255, 0.9) !important;
+  font-weight: 500;
+  border-radius: 20px;
+  margin: 0 0.25rem;
+  transition: var(--transition-smooth);
+}
+
+.custom-nav-item:hover {
+  color: #ffffff !important;
+  background-color: rgba(255, 255, 255, 0.1) !important;
+}
+
+/* Home Active Pill from Figma */
+.custom-nav-item.is-active {
+  background-color: rgba(255, 255, 255, 0.15) !important;
+  border: 1.5px solid rgba(255, 255, 255, 0.35);
+  font-weight: 600;
+  color: #ffffff !important;
+}
+
+/* Theme Toggle Button in Navbar */
+.theme-toggle {
+  color: rgba(255, 255, 255, 0.9) !important;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  transition: var(--transition-smooth);
+  margin-left: 0.5rem;
+}
+
+.theme-toggle:hover {
+  background-color: rgba(255, 255, 255, 0.15) !important;
+  transform: rotate(15deg) scale(1.1);
+}
+
+.toggle-icon {
+  font-size: 1.25rem;
+}
+
+/* Bulma Mobile Menu Burger */
+.navbar-burger {
+  color: #ffffff !important;
+}
+
+.navbar-burger:hover {
+  background-color: rgba(255, 255, 255, 0.1) !important;
+}
+
+@media screen and (max-width: 1023px) {
+  .navbar-menu {
+    background-color: var(--color-primary-brown) !important;
+    padding: 1rem;
+    border-radius: 8px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+  }
+  .custom-nav-item {
+    color: #ffffff !important;
+    padding: 0.75rem 1rem !important;
+    margin: 0.25rem 0;
+  }
+  .custom-nav-item.is-active {
+    background-color: rgba(255, 255, 255, 0.25) !important;
+  }
+  .theme-toggle {
+    margin-left: 0;
+    justify-content: flex-start;
+    padding-left: 1rem;
+    width: auto;
+    height: auto;
+    border-radius: 4px;
+  }
+}
+
+/* ==========================================================================
+   Floating Glassmorphic Cards (Overlapping)
+   ========================================================================== */
+
+.glass-pills-container {
+  margin-top: -110px;
+  position: relative;
+  z-index: 15;
+}
+
+.glass-pill-card {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.25rem 1rem;
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(18px) saturate(140%);
+  -webkit-backdrop-filter: blur(18px) saturate(140%);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 24px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.18),
+              inset 0 1px 0 rgba(255, 255, 255, 0.2);
+  color: #ffffff !important;
+  text-align: center;
+  flex-direction: column;
+  gap: 0.5rem;
+  transition: var(--transition-smooth);
+  height: 100%;
+}
+
+.glass-pill-card:hover {
+  background: rgba(255, 255, 255, 0.15);
+  border-color: rgba(255, 255, 255, 0.3);
+  transform: translateY(-5px);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.25),
+              inset 0 1px 0 rgba(255, 255, 255, 0.3);
+}
+
+.pill-icon {
+  font-size: 1.5rem;
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  transition: var(--transition-smooth);
+}
+
+.glass-pill-card:hover .pill-icon {
+  background: var(--color-accent-gold);
+  border-color: rgba(255, 255, 255, 0.4);
+  transform: scale(1.1) rotate(-5deg);
+  color: #2d2621;
+}
+
+.pill-text {
+  font-family: var(--font-sans);
+  font-weight: 500;
+  font-size: 0.95rem;
+  letter-spacing: -0.01em;
+}
+
+/* ==========================================================================
+   Main Content & Book Section Styling
+   ========================================================================== */
+
+.main-content {
+  background-color: var(--bulma-body-background-color);
+  transition: background-color 0.4s ease;
+}
+
+.section-title {
+  position: relative;
+  font-weight: 700;
+  margin-bottom: 2rem !important;
+  letter-spacing: -0.02em;
+}
+
+.section-divider {
+  background-color: rgba(0, 0, 0, 0.06);
+  height: 1px;
+  margin: 3rem 0;
+}
+
+html[data-theme="dark"] .section-divider {
+  background-color: rgba(255, 255, 255, 0.08);
+}
+
+/* Book Card Design */
+.book-card {
+  border: none;
+  background-color: var(--bulma-card-background-color);
+  box-shadow: var(--bulma-card-shadow);
+  border-radius: 12px;
+  padding: 1rem;
+  cursor: pointer;
+  transition: var(--transition-smooth);
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.book-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 28px rgba(45, 38, 33, 0.15);
+}
+
+html[data-theme="dark"] .book-card:hover {
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.4);
+}
+
+.book-cover-container {
+  overflow: hidden;
+  border-radius: 8px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+  position: relative;
+  background: #e2e8f0;
+}
+
+.book-cover {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: var(--transition-smooth);
+}
+
+.book-card:hover .book-cover {
+  transform: scale(1.04);
+}
+
+/* Fallback Styled Hardcover Book Covers (if image is missing) */
+.book-cover-placeholder {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.25rem;
+  box-sizing: border-box;
+  text-align: center;
+}
+
+.placeholder-border {
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 0.75rem;
+  border-radius: 4px;
+  box-shadow: inset 0 0 15px rgba(0, 0, 0, 0.2);
+  gap: 0.5rem;
+}
+
+.placeholder-title {
+  font-size: 1.1rem;
+  font-weight: 700;
+  line-height: 1.2;
+  margin-bottom: 0.25rem;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.placeholder-author {
+  font-size: 0.75rem;
+  opacity: 0.85;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.placeholder-type {
+  font-size: 0.65rem;
+  background: var(--color-accent-gold);
+  color: #2d2621;
+  padding: 0.1rem 0.4rem;
+  border-radius: 3px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  margin-bottom: 0.5rem;
+}
+
+/* Book Details Text inside Card */
+.card-content-custom {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.book-title {
+  font-size: 1.05rem;
+  font-weight: 600;
+  margin-bottom: 0.35rem;
+  line-height: 1.25;
+  color: var(--bulma-title-color);
+  /* Truncate long titles neatly */
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  height: 2.5rem; /* Forces consistent height across all cards */
+}
+
+.book-price {
+  font-weight: 700;
+  font-size: 1.1rem;
+  color: var(--color-accent-gold);
+}
+
+html[data-theme="light"] .book-price {
+  color: var(--color-primary-brown-dark);
+}
+
+/* ==========================================================================
+   Footer Section Styling
+   ========================================================================== */
+
+.custom-footer {
+  background-color: var(--color-primary-brown);
+  color: #f7f5f2;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.footer-heading {
+  color: #ffffff !important;
+  font-weight: 700;
+  margin-bottom: 1.5rem !important;
+  font-size: 1.35rem;
+}
+
+.contact-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1rem;
+  gap: 0.75rem;
+}
+
+.contact-icon {
+  font-size: 1.15rem;
+  color: var(--color-accent-gold);
+  width: 28px;
+}
+
+a.contact-link {
+  color: #f7f5f2;
+  transition: var(--transition-smooth);
+}
+
+a.contact-link:hover {
+  color: var(--color-accent-gold);
+  text-decoration: underline;
+}
+
+/* ==========================================================================
+   Dynamic Modal Styling
+   ========================================================================== */
+
+.custom-modal-card {
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4);
+  max-width: 720px;
+  width: 90%;
+  animation: modalScaleIn 0.3s cubic-bezier(0.18, 0.89, 0.32, 1.28);
+}
+
+@keyframes modalScaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.92);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.custom-modal-header {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+  padding: 1.25rem 1.5rem;
+}
+
+html[data-theme="dark"] .custom-modal-header {
+  border-bottom-color: rgba(255, 255, 255, 0.05);
+}
+
+.custom-modal-body {
+  padding: 2rem 1.5rem;
+}
+
+.modal-cover-wrapper {
+  width: 100%;
+  max-width: 200px;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
+  aspect-ratio: 2/3;
+  position: relative;
+  background-color: #e2e8f0;
+}
+
+.modal-book-cover {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.modal-placeholder-cover {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.book-modal-price {
+  font-weight: 700;
+  font-size: 1.35rem;
+  color: var(--color-accent-gold) !important;
+  margin-top: 0.5rem;
+  margin-bottom: 1rem !important;
+}
+
+html[data-theme="light"] .book-modal-price {
+  color: var(--color-primary-brown-dark) !important;
+}
+
+.modal-desc-content {
+  line-height: 1.6;
+  font-size: 0.95rem;
+  color: var(--bulma-text);
+  opacity: 0.9;
+}
+
+.custom-modal-footer {
+  border-top: 1px solid rgba(0, 0, 0, 0.05);
+  justify-content: flex-end;
+  padding: 1.25rem 1.5rem;
+}
+
+html[data-theme="dark"] .custom-modal-footer {
+  border-top-color: rgba(255, 255, 255, 0.05);
+}
+
+.width-100-percent {
+  width: 100%;
+}
+
+.custom-modal-btn-buy {
+  background-color: var(--color-primary-brown) !important;
+  color: #fff !important;
+  border: none;
+  font-weight: 600;
+  transition: var(--transition-smooth);
+}
+
+.custom-modal-btn-buy:hover {
+  background-color: var(--color-primary-brown-dark) !important;
+}
+
+.custom-modal-btn-close {
+  background-color: transparent !important;
+  color: var(--bulma-text) !important;
+  border: 1px solid rgba(0, 0, 0, 0.15) !important;
+  font-weight: 500;
+  transition: var(--transition-smooth);
+}
+
+html[data-theme="dark"] .custom-modal-btn-close {
+  border-color: rgba(255, 255, 255, 0.15) !important;
+}
+
+.custom-modal-btn-close:hover {
+  background-color: rgba(0, 0, 0, 0.05) !important;
+}
+
+html[data-theme="dark"] .custom-modal-btn-close:hover {
+  background-color: rgba(255, 255, 255, 0.05) !important;
+}
+
+/* ==========================================================================
+   Helper Utilities
+   ========================================================================== */
+
+.mr-2 {
+  margin-right: 0.5rem;
+}
+
+/* ==========================================================================
+   Quantity Selector & Cart Styling
+   ========================================================================== */
+
+.quantity-selector {
+  display: flex;
+  align-items: center;
+  background-color: var(--color-cream-bg);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 20px;
+  padding: 2px;
+  transition: var(--transition-smooth);
+}
+
+html[data-theme="dark"] .quantity-selector {
+  background-color: var(--color-cream-card);
+  border-color: rgba(255, 255, 255, 0.1);
+}
+
+.quantity-btn {
+  background: transparent !important;
+  border: none !important;
+  color: var(--bulma-text) !important;
+  width: 28px;
+  height: 28px;
+  border-radius: 50% !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 !important;
+  cursor: pointer;
+  transition: var(--transition-smooth);
+}
+
+.quantity-btn:hover:not([disabled]) {
+  background-color: rgba(0, 0, 0, 0.08) !important;
+}
+
+html[data-theme="dark"] .quantity-btn:hover:not([disabled]) {
+  background-color: rgba(255, 255, 255, 0.1) !important;
+}
+
+.quantity-btn[disabled] {
+  opacity: 0.35;
+  cursor: not-allowed;
+}
+
+.quantity-value {
+  font-weight: 600;
+  font-size: 0.95rem;
+  min-width: 18px;
+  text-align: center;
+  color: var(--bulma-text);
+}
+
+.book-card.in-cart {
+  border: 1.5px solid var(--color-accent-gold) !important;
+  box-shadow: 0 4px 16px rgba(197, 168, 128, 0.15) !important;
+}
+
+.cart-badge {
+  font-size: 0.75rem;
+  height: 1.25rem;
+  padding-left: 0.4rem;
+  padding-right: 0.4rem;
+  font-weight: 700;
+  background-color: var(--color-accent-gold) !important;
+  color: #2d2621 !important;
+  border-radius: 290486px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Adjust card margins for layout stability */
+.book-price {
+  margin-bottom: 0 !important;
+}
+
+/* ==========================================================================
+   Cart Subtotal Footer Styling
+   ========================================================================== */
+
+.cart-subtotal-footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: var(--color-cream-card);
+  box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.15);
+  padding: 1rem 0;
+  z-index: 50;
+  border-top: 1px solid rgba(0, 0, 0, 0.05);
+  transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  transform: translateY(100%);
+}
+
+html[data-theme="dark"] .cart-subtotal-footer {
+  border-top-color: rgba(255, 255, 255, 0.05);
+  box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.4);
+}
+
+.cart-subtotal-footer.is-active {
+  transform: translateY(0);
+}
+
+.subtotal-label {
+  font-size: 1.1rem;
+  font-weight: 500;
+  margin-right: 0.5rem;
+  color: var(--bulma-text);
+}
+
+.subtotal-value {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--color-accent-gold);
+}
+
+html[data-theme="light"] .subtotal-value {
+  color: var(--color-primary-brown-dark);
+}
+
+/* ==========================================================================
+   LGPD Cookie Banner
+   ========================================================================== */
+
+.cookie-banner {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: var(--color-primary-brown-dark);
+  color: #fff;
+  padding: 1rem 0;
+  z-index: 100;
+  box-shadow: 0 -5px 25px rgba(0, 0, 0, 0.3);
+  transform: translateY(100%);
+  transition: transform 0.4s ease-out;
+}
+
+.cookie-banner.is-active {
+  transform: translateY(0);
+}
+
+.cookie-text {
+  font-size: 0.9rem;
+  max-width: 80%;
+}
+
+.cookie-btn {
+  background-color: var(--color-accent-gold) !important;
+  color: #2d2621 !important;
+  border: none !important;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.cookie-btn:hover {
+  background-color: #d8be99 !important;
+}
+
+/* ==========================================================================
+   Responsiveness explicitly for requirements (max-width: 1200px & 600px)
+   ========================================================================== */
+
+/* Tablet (max-width: 1200px) - Orientation changes from horizontal to vertical */
+@media screen and (max-width: 1200px) {
+  .glass-pills-container .column {
+    /* Força os elementos que eram horizontais a ficarem 100% da largura, stackando verticalmente */
+    width: 100% !important;
+    flex: none;
+  }
+  
+  .glass-pill-card {
+    flex-direction: row;
+    justify-content: flex-start;
+    padding: 1rem;
+    text-align: left;
+  }
+  
+  .glass-pill-card .pill-icon {
+    margin-right: 1rem;
+  }
+  
+  .contact-item {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.25rem;
+  }
+}
+
+/* Smartphone (max-width: 600px) - Font sizes, padding, borders */
+@media screen and (max-width: 600px) {
+  /* Tamanho de fontes */
+  .section-title {
+    font-size: 1.25rem !important;
+  }
+  
+  .book-title {
+    font-size: 0.95rem;
+  }
+  
+  .hero-title {
+    font-size: 1.75rem !important;
+  }
+  
+  /* Paddings e Margins */
+  .custom-hero {
+    padding-top: 90px !important; /* Space for the fixed navbar */
+    padding-bottom: 2rem;
+  }
+  
+  .book-card {
+    padding: 0.5rem !important;
+  }
+  
+  /* Bordas */
+  .glass-pill-card {
+    border-radius: 12px;
+    border-width: 2px;
+  }
+  
+  .cookie-banner-content {
+    flex-direction: column;
+    text-align: center;
+    gap: 1rem;
+  }
+  
+  .cookie-text {
+    max-width: 100%;
+  }
+}
+
+/* ==========================================================================
+   Visual Optimizations (Scrolled Navbar, Animations & Refinements)
+   ========================================================================== */
+
+#main-navbar {
+  position: fixed !important;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 99;
+  transition: background-color 0.4s ease, backdrop-filter 0.4s ease, box-shadow 0.4s ease, border-color 0.4s ease, padding 0.4s ease;
+  padding: 0.75rem 0;
+}
+
+#main-navbar.is-scrolled {
+  background-color: var(--color-navbar-scrolled, rgba(45, 38, 33, 0.78)) !important;
+  backdrop-filter: blur(12px) saturate(140%);
+  -webkit-backdrop-filter: blur(12px) saturate(140%);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.18);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  padding: 0.35rem 0;
+}
+
+/* Underline Hover Animation for Nav Items */
+.custom-nav-item {
+  position: relative;
+}
+
+.custom-nav-item::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: 4px;
+  left: 50%;
+  background-color: var(--color-accent-gold);
+  transition: width 0.3s ease, left 0.3s ease;
+}
+
+.custom-nav-item:hover::after {
+  width: 50%;
+  left: 25%;
+}
+
+.custom-nav-item.is-active::after {
+  display: none;
+}
+
+/* Book Card Hover & Shadows */
+.book-card {
+  transition: transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1), box-shadow 0.4s cubic-bezier(0.165, 0.84, 0.44, 1), border-color 0.4s ease !important;
+}
+
+.book-card:hover {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 16px 36px rgba(45, 38, 33, 0.15) !important;
+}
+
+html[data-theme="dark"] .book-card:hover {
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.45) !important;
+}
+
+/* Inputs & Dropdowns Focus Highlights */
+.input:focus, .select select:focus {
+  border-color: var(--color-accent-gold) !important;
+  box-shadow: 0 0 0 0.125em rgba(197, 168, 128, 0.25) !important;
+}
+
+/* Active Button Click Feedback */
+.button:active {
+  transform: scale(0.96) !important;
+  transition: transform 0.1s ease;
+}
+
+/* Todo Item List Animations */
+.todo-item {
+  border: 1px solid rgba(197, 168, 128, 0.15) !important;
+  transition: transform 0.3s cubic-bezier(0.165, 0.84, 0.44, 1), box-shadow 0.3s cubic-bezier(0.165, 0.84, 0.44, 1), background-color 0.3s ease !important;
+}
+
+.todo-item:hover {
+  transform: translateY(-2px) translateX(2px);
+  box-shadow: 0 6px 16px rgba(45, 38, 33, 0.08) !important;
+  background-color: rgba(197, 168, 128, 0.04) !important;
+}
+
+html[data-theme="dark"] .todo-item:hover {
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3) !important;
+  background-color: rgba(197, 168, 128, 0.08) !important;
+}
+
+/* Disable hover effect on logo brand link */
+.logo-brand:hover {
+  background-color: transparent !important;
+  color: inherit !important;
+  transform: none !important;
+}
+
+/* Coupon card style */
+.coupon-card {
+  border: 1px dashed var(--color-accent-gold);
+  border-radius: 12px;
+  background-color: var(--color-cream-card);
+  padding: 1.5rem;
+  text-align: center;
+  box-shadow: var(--bulma-card-shadow);
+  transition: var(--transition-smooth);
+}
+
+.coupon-code {
+  font-family: var(--font-sans);
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--color-primary-brown-dark);
+  background-color: rgba(197, 168, 128, 0.15);
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  border: 1px dashed var(--color-accent-gold);
+  display: inline-block;
+  letter-spacing: 0.1em;
+  margin: 0.75rem 0;
+}
+
+html[data-theme="dark"] .coupon-code {
+  color: var(--color-accent-gold);
+  background-color: rgba(197, 168, 128, 0.08);
+}
+
+/* Subscription section cozy styling */
+.subscription-card {
+  background: linear-gradient(135deg, var(--color-cream-card) 0%, rgba(197, 168, 128, 0.05) 100%);
+  border: 1.5px solid rgba(197, 168, 128, 0.25);
+  border-radius: 16px;
+  padding: 2rem;
+  box-shadow: var(--bulma-card-shadow);
+  transition: var(--transition-smooth);
+}
+
+/* Settings Page Styling */
+.palette-btn {
+  transition: transform 0.2s ease, outline 0.2s ease !important;
+}
+
+.palette-btn.is-active {
+  outline: 3px solid var(--color-accent-gold) !important;
+  outline-offset: 3px;
+  transform: scale(1.08);
+}
+
+.font-size-btn {
+  background-color: transparent !important;
+  color: var(--color-text-dark) !important;
+  border-color: var(--color-primary-brown-light) !important;
+  transition: var(--transition-smooth);
+}
+
+.font-size-btn:hover {
+  background-color: rgba(197, 168, 128, 0.15) !important;
+  color: var(--color-accent-gold) !important;
+  border-color: var(--color-accent-gold) !important;
+}
+
+.font-size-btn.is-active {
+  background-color: var(--color-accent-gold) !important;
+  color: white !important;
+  border-color: var(--color-accent-gold) !important;
+}
+
+
